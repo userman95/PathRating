@@ -13,14 +13,14 @@ body {
   overflow-y: auto;
 }
 
-/* Map styles. */
+/* Map styles. */ 
 #map-holder {
   height: 100%;
   width: 100%;
 }
 
 #geojson-output {
-   position: absolute; 
+  position: absolute; 
   width: 100%;
   -webkit-box-sizing: border-box; /* <=iOS4, <= Android  2.3 */
   -moz-box-sizing: border-box; /* FF1+ */
@@ -30,12 +30,14 @@ body {
   background-color: #F1F1F1;
   display: block;
 }
+
 #download-link {
   position: absolute;
   top:10px;
   right:10px;
   z-index:100;
 }
+
 /*style the 'Geojson output' button*/
 #geo-toggle{          
     position: absolute;

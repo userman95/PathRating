@@ -23,7 +23,7 @@ function init() {
   });
 
   bindDataLayerListeners(map.data);
-
+map.data.loadGeoJson("data/2013139.geojson");
   // Retrieve HTML elements.
   var mapContainer = document.getElementById('map-holder');
   geoJsonOutput = document.getElementById('geojson-output');

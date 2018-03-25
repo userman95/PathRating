@@ -1,4 +1,3 @@
-// The Google Map.
 var map;
 
 var geoJsonOutput;
@@ -16,6 +15,7 @@ function init() {
   });
 	
   map.data.setControls(['Point', 'LineString', 'Polygon']);
+  
   map.data.setStyle({
     editable: true,
     draggable: true,
@@ -23,12 +23,18 @@ function init() {
   });
 
   bindDataLayerListeners(map.data);
+  
+  
+// load the geoJson file 
 map.data.loadGeoJson("data/2013139.geojson");
+
   // Retrieve HTML elements.
   var mapContainer = document.getElementById('map-holder');
   geoJsonOutput = document.getElementById('geojson-output');
   downloadLink = document.getElementById('download-link');
+  
 }
+
 
 google.maps.event.addDomListener(window, 'load', init);
 
@@ -51,6 +57,7 @@ function bindDataLayerListeners(dataLayer) {
   dataLayer.addListener('removefeature', refreshGeoJsonFromData);
   dataLayer.addListener('setgeometry', refreshGeoJsonFromData);
 }
+
 // Enable geojson output with the click of the button
 function geojsonOutput() {
     var show = document.getElementById("geojson-output");

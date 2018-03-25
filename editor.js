@@ -26,7 +26,7 @@ function init() {
   
   
 // load the geoJson file 
-map.data.loadGeoJson("data/2013139.geojson");
+map.data.loadGeoJson("data/2016030.geojson");
 
   // Retrieve HTML elements.
   var mapContainer = document.getElementById('map-holder');

@@ -1,5 +1,5 @@
 var map;
-vaar x;
+var x;
 var geoJsonOutput;
 var downloadLink;
 

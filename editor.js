@@ -1,5 +1,5 @@
 var map;
-
+vaar x;
 var geoJsonOutput;
 var downloadLink;
 
@@ -15,7 +15,6 @@ function init() {
   });
 	
   map.data.setControls(['Point', 'LineString', 'Polygon']);
-  
   map.data.setStyle({
     editable: true,
     draggable: true,
@@ -23,18 +22,27 @@ function init() {
   });
 
   bindDataLayerListeners(map.data);
-  
-  
-// load the geoJson file 
-map.data.loadGeoJson("data/2013139.geojson");
+
+  map.data.addListener('rightclick', function(event){
+        map.data.remove(event.feature);
+    	});
 
   // Retrieve HTML elements.
   var mapContainer = document.getElementById('map-holder');
   geoJsonOutput = document.getElementById('geojson-output');
   downloadLink = document.getElementById('download-link');
-  
+	  //reading back the new color value
+  map.data.setStyle(function(feature) {
+    var default_color = "#000000";
+    if (feature.getProperty("Color")!=x){
+        default_color = feature.getProperty("Color");
+      }
+      else if(feature.getProperty("Color")==null){
+          feature.setProperty("Color", x);
+      }
+      return ({strokeColor: default_color});
+});
 }
-
 
 google.maps.event.addDomListener(window, 'load', init);
 
@@ -56,8 +64,27 @@ function bindDataLayerListeners(dataLayer) {
   dataLayer.addListener('addfeature', refreshGeoJsonFromData);
   dataLayer.addListener('removefeature', refreshGeoJsonFromData);
   dataLayer.addListener('setgeometry', refreshGeoJsonFromData);
+	var rating_counter = 1;
+  map.data.addListener('click', function(event) {
+          if(rating_counter == 0)
+             selected_color(event, '#000000');
+          else if(rating_counter == 1)
+            selected_color(event, '#ff0000');
+          else if(rating_counter == 2)
+            selected_color(event, '#ff8100');
+          else if(rating_counter == 3)
+            selected_color(event, '#e3ff00');
+          else if(rating_counter == 4)
+            selected_color(event, '#004c00');
+          else if(rating_counter == 5)
+            selected_color(event, '#00FF00');
+        rating_counter++;
+        if(rating_counter>5)
+          rating_counter = 0;
+    });
 }
-
+	
+}
 // Enable geojson output with the click of the button
 function geojsonOutput() {
     var show = document.getElementById("geojson-output");
@@ -72,4 +99,9 @@ function geojsonOutput() {
 function deletepaths(){
   map.data.forEach(function(e){map.data.remove(e);});
   geoJsonOutput.value=null;
+}
+function selected_color(event, x){
+    color = x;
+    map.data.overrideStyle(event.feature,{strokeColor: x});
+    event.feature.setProperty("Color", x);
 }

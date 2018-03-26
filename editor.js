@@ -8,8 +8,8 @@ function init() {
   map = new google.maps.Map(document.getElementById('map-holder'), {
     center: {lat: 39.6249838, lng: 19.922346100000027},
     zoom: 15,
-    mapTypeControl: false,
-    streetViewControl: false,
+    mapTypeControl: true,
+    streetViewControl: true,
     fullscreenControl: false,
     mapTypeId: 'satellite'
   });
@@ -31,7 +31,8 @@ function init() {
   var mapContainer = document.getElementById('map-holder');
   geoJsonOutput = document.getElementById('geojson-output');
   downloadLink = document.getElementById('download-link');
-	  //reading back the new color value
+	  
+//reading back the new color value
   map.data.setStyle(function(feature) {
     var default_color = "#000000";
     if (feature.getProperty("Color")!=x){
@@ -64,7 +65,8 @@ function bindDataLayerListeners(dataLayer) {
   dataLayer.addListener('addfeature', refreshGeoJsonFromData);
   dataLayer.addListener('removefeature', refreshGeoJsonFromData);
   dataLayer.addListener('setgeometry', refreshGeoJsonFromData);
-	var rating_counter = 1;
+	
+var rating_counter = 1;
   map.data.addListener('click', function(event) {
           if(rating_counter == 0)
              selected_color(event, '#000000');

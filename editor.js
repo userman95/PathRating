@@ -13,7 +13,7 @@ function init() {
     fullscreenControl: false,
     mapTypeId: 'satellite'
   });
-	map.data.loadGeoJson('data/2013139.geojson')
+  map.data.loadGeoJson('data/2013139.geojson')
   map.data.setControls(['Point', 'LineString', 'Polygon']);
   map.data.setStyle({
     editable: true,
@@ -34,7 +34,7 @@ function init() {
 	  
 //reading back the new color value
   map.data.setStyle(function(feature) {
-    var default_color = "#000000";
+    var default_color = "white";
     if (feature.getProperty("Color")!=x){
         default_color = feature.getProperty("Color");
       }
@@ -69,7 +69,7 @@ function bindDataLayerListeners(dataLayer) {
   dataLayer.addListener('removefeature', refreshGeoJsonFromData);
   dataLayer.addListener('setgeometry', refreshGeoJsonFromData);
 	
-var rating_counter = 1;
+var rating_counter = 0;
   map.data.addListener('click', function(event) {
           if(rating_counter == 0)
              selected_color(event, '#000000');

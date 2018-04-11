@@ -41,7 +41,10 @@ function init() {
       else if(feature.getProperty("Color")==null){
           feature.setProperty("Color", x);
       }
-      return ({strokeColor: default_color});
+      return ({
+	      strokeColor: default_color,
+      	      strokeWeight: 4
+      	      });
 });
 }
 

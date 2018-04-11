@@ -86,7 +86,6 @@ var rating_counter = 1;
     });
 }
 	
-}
 // Enable geojson output with the click of the button
 function geojsonOutput() {
     var show = document.getElementById("geojson-output");

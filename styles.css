@@ -112,6 +112,8 @@ body {
 }
 #left-column{
   float:left;
+  height:100%;
+  width:25%;
 }
 textarea {
   overflow: auto;

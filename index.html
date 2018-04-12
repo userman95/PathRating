@@ -15,11 +15,10 @@
     <button onclick="deletepaths()" id="deletepaths" >Delete All paths</button>
   	<a id="download-link" href="data:;base64," download="geojson.json"><button>Download GeoJson</button></a>
     
- <div class="dropdown" href="data:;base64,">
-    <button onclick="dropDownMenu()" class="dropbtn">Dropdown</button>
+ <div class="dropdown" onmouseover="data:;base64,">
   
-   <div id="Dropdown" class="dropdown-content">
-    <button onclick="selected_color(event,'red');" class="vbRow">Very Bad</button>
+   <div class="dropdown-content">
+     <button onclick="selected_color(event,'red');" class="vbRow">Very Bad</button>
      <button onclick="selected_color(event,'orange');" class="badRow">Bad</button>
      <button onclick="selected_color(event,'black');" class="normalRow">Normal</button>
      <button onclick="selected_color(event,'#004c00');" class="goodRow">Good</button>

@@ -111,13 +111,12 @@ function selected_color(event, x){
     event.feature.setProperty("Color", x);
 }
 
-var layer = new layer.GeoJSON(null, {
-  onEachFeature: function (feature, layer) {
-    layer.on('mouseover', function () {
-    	document.getElementByClassName("dropdown-content").classList.toggle("show");
-    });
-    layer.on('mouseout', function () {
-     	window.onclick = function(event) {
+ map.data.addListener('mouseover',function(e){
+ 	console.log('PRINT THIS');
+ })
+document.getElementByClassName("dropdown-content").classList.toggle("show");
+
+window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
 
     var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -130,6 +129,4 @@ var layer = new layer.GeoJSON(null, {
     }
   }
 }
-    });
-  }
-}).addTo(map);
+

@@ -53,3 +53,60 @@ body {
     right: 20px;
     z-index: 100;
 }
+/*dropdown menu*/
+.vbRow {
+    background-color: red;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.badRow {
+    background-color: orange;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.normalRow {
+    background-color: #000000;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.goodRow {
+    background-color: #004c00;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.vgRow {
+    background-color: #004c00;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.dropdown{
+  position : relative;
+  display: inline-block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}

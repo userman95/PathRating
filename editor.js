@@ -69,7 +69,7 @@ function bindDataLayerListeners(dataLayer) {
   dataLayer.addListener('removefeature', refreshGeoJsonFromData);
   dataLayer.addListener('setgeometry', refreshGeoJsonFromData);
 	
-var rating_counter = 0;
+/*var rating_counter = 0;
   map.data.addListener('click', function(event) {
           if(rating_counter == 0)
              selected_color(event, '#000000');
@@ -88,7 +88,7 @@ var rating_counter = 0;
           rating_counter = 0;
     });
 }
-	
+	*/
 // Enable geojson output with the click of the button
 function geojsonOutput() {
     var show = document.getElementById("geojson-output");

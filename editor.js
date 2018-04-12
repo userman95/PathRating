@@ -111,7 +111,7 @@ function selected_color(event, x){
     event.feature.setProperty("Color", x);
 }
 
-var layer = new L.GeoJSON(null, {
+var layer = new layer.GeoJSON(null, {
   onEachFeature: function (feature, layer) {
     layer.on('mouseover', function () {
     	document.getElementByClassName("dropdown-content").classList.toggle("show");

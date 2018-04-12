@@ -26,7 +26,7 @@ function init() {
   map.data.addListener('rightclick', function(event){
         map.data.remove(event.feature);
     	});
-  map.data.addListener("click",alert('PRINT THIS'););
+  map.data.addListener("click",alert('PRINT THIS'));
   // Retrieve HTML elements.
   var mapContainer = document.getElementById('map-holder');
   geoJsonOutput = document.getElementById('geojson-output');

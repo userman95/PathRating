@@ -15,6 +15,7 @@ body {
 
 /* Map styles. */ 
 #map-holder {
+  float:right;
   height: 100%;
   width: 100%;
 }
@@ -27,7 +28,7 @@ body {
   border: none;
   resize: none;
   background-color: #F1F1F1;
-  display: none;
+  display: block;
 }
 
 #download-link {

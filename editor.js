@@ -111,4 +111,25 @@ function selected_color(event, x){
     event.feature.setProperty("Color", x);
 }
 
+var layer = new L.GeoJSON(null, {
+  onEachFeature: function (feature, layer) {
+    layer.on('mouseover', function () {
+    	document.getElementByClassName("dropdown-content").classList.toggle("show");
+    });
+    layer.on('mouseout', function () {
+     	window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
 
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+    });
+  }
+}).addTo(map);

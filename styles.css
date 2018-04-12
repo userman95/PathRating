@@ -112,5 +112,7 @@ body {
 }
 #left-column{
   float:left;
-
+}
+textarea {
+  overflow: auto;
 }

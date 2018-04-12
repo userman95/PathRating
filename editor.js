@@ -113,7 +113,7 @@ function selected_color(event, x){
 
  map.data.addListener('mouseover',function(e){
  	console.log('PRINT THIS');
- })
+ });
 document.getElementByClassName("dropdown-content").classList.toggle("show");
 
 window.onclick = function(event) {

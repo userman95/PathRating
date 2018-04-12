@@ -86,9 +86,10 @@ function bindDataLayerListeners(dataLayer) {
         rating_counter++;
         if(rating_counter>5)
           rating_counter = 0;
-    });
+    	});
+    */
 }
-	*/
+	
 // Enable geojson output with the click of the button
 function geojsonOutput() {
     var show = document.getElementById("geojson-output");

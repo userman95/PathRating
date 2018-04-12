@@ -23,7 +23,7 @@ function init() {
 
   bindDataLayerListeners(map.data);
 
-  map.data.addListener('delete', function(event){
+  map.data.addListener('rightclick', function(event){
         map.data.remove(event.feature);
     	});
 

@@ -26,7 +26,9 @@ function init() {
   map.data.addListener('rightclick', function(event){
         map.data.remove(event.feature);
     	});
-
+  map.data.addListener("click",function(event){
+	alert('PRINT THIS');
+  });
   // Retrieve HTML elements.
   var mapContainer = document.getElementById('map-holder');
   geoJsonOutput = document.getElementById('geojson-output');
@@ -111,9 +113,6 @@ function selected_color(event, x){
     event.feature.setProperty("Color", x);
 }
 
- map.data.addListener('click',function(event){
- 	alert('PRINT THIS');
- });
 /*document.getElementByClassName("dropdown-content").classList.toggle("show");
 
 window.onclick = function(event) {

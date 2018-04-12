@@ -111,10 +111,10 @@ function selected_color(event, x){
     event.feature.setProperty("Color", x);
 }
 
- map.data.addListener('mouseover',function(e){
- 	console.log('PRINT THIS');
+ map.data.addListener('click',function(event){
+ 	alert('PRINT THIS');
  });
-document.getElementByClassName("dropdown-content").classList.toggle("show");
+/*document.getElementByClassName("dropdown-content").classList.toggle("show");
 
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
@@ -128,5 +128,5 @@ window.onclick = function(event) {
       }
     }
   }
-}
+}*/
 

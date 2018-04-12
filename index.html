@@ -14,5 +14,18 @@
     <button onclick="geojsonOutput()" id="geo-toggle" class="btn btn-warning">GeoJson output</button>
     <button onclick="deletepaths()" id="deletepaths" >Delete All paths</button>
   	<a id="download-link" href="data:;base64," download="geojson.json"><button>Download GeoJson</button></a>
+    
+ <div class="dropdown">
+    <button onclick="dropDownMenu()" class="dropbtn">Dropdown</button>
+  
+   <div id="Dropdown" class="dropdown-content">
+    <button onclick="selected_color(event,'red');" class="dropbtn">Very Bad</button>
+     <button onclick="selected_color(event,'orange');" class="dropbtn">Bad</button>
+     <button onclick="selected_color(event,'black');" class="dropbtn">Normal</button>
+     <button onclick="selected_color(event,'004c00');" class="dropbtn">Good</button>
+     <button onclick="selected_color(event,'#00FF00');" class="dropbtn">Very Good</button>
+  </div>
+   
+</div>
   </body>
 </html>

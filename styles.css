@@ -20,7 +20,6 @@ body {
 }
 
 #geojson-output {
-  position: absolute; 
   width: 100%;
   -webkit-box-sizing: border-box; /* <=iOS4, <= Android  2.3 */
   -moz-box-sizing: border-box; /* FF1+ */
@@ -28,7 +27,7 @@ body {
   border: none;
   resize: none;
   background-color: #F1F1F1;
-  display: block;
+  display: none;
 }
 
 #download-link {

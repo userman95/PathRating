@@ -28,7 +28,7 @@ function init() {
         map.data.remove(event.feature);
     	});
   map.data.addListener("click",function(event){
-	info_box();
+	event.info_box();
   });
   // Retrieve HTML elements.
   left_column = document.getElementById('left-column');

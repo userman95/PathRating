@@ -110,8 +110,26 @@ function deletepaths(){
   map.data.forEach(function(e){map.data.remove(e);});
   geoJsonOutput.value=null;
 }
-function selected_color(event.feature){
-    map.data.overrideStyle(event.feature,{strokeColor: 'red',fillColor:'red'});
+function selected_color(event.feature,rate){
+	var col;
+		switch(rate){
+		case 1:
+			col = 'red';
+			break;
+		case 2:
+			col = 'yellow';
+			break;
+		case 3:
+			col = 'white';
+			break;
+		case 4:
+			col = 'blue';
+			break;
+		case 5:
+			col = 'green';
+			break;	
+	}
+    map.data.overrideStyle(event.feature,{strokeColor: 'col',fillColor:'col'});
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();

@@ -124,6 +124,4 @@ function info_box(){
     content: contentString
   });
 }
-var contentString = '<a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>'
+var contentString = '<a href="#home">Home</a>';

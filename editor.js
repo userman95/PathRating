@@ -111,30 +111,31 @@ function deletepaths(){
   geoJsonOutput.value=null;
 }
 function selected_color(feature,rate){
-	var col;
+	
 		switch(rate){
 		case 1:
-			col = 'red';
+			x = 'red';
 			break;
 		case 2:
-			col = 'yellow';
+			x = 'yellow';
 			break;
 		case 3:
-			col = 'white';
+			x = 'white';
 			break;
 		case 4:
-			col = 'blue';
+			x = 'blue';
 			break;
 		case 5:
-			col = 'green';
+			x = 'green';
 			break;	
 	}
     map.data.overrideStyle(feature,function() {
 	 return {
-            fillColor: col,
-            strokeColor: col
+            fillColor: x,
+            strokeColor: x
 	 }
         });
+	event.feature.setProperty("Color", x);
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();

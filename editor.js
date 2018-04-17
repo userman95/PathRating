@@ -110,7 +110,7 @@ function deletepaths(){
   map.data.forEach(function(e){map.data.remove(e);});
   geoJsonOutput.value=null;
 }
-function selected_color(event){
+function selected_color(){
     map.data.overrideStyle(event.feature,{strokeColor: 'red'});
     event.feature.setProperty("Color", 'red');
 }

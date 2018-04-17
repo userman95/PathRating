@@ -116,8 +116,8 @@ function Rating(number){
 		case 5:
 			col = 'green';		
 	}
-	feature.setProperty("Rating", number);
-	feature.setProperty("Colour", col);
+	this.feature.setProperty("Rating", number);
+	this.feature.setProperty("Colour", col);
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();

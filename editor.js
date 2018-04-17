@@ -129,7 +129,12 @@ function selected_color(feature,rate){
 			col = 'green';
 			break;	
 	}
-    map.data.overrideStyle(event.feature,{strokeColor: 'col',fillColor:'col'});
+    map.data.overrideStyle(feature,function() {
+	 return {
+            fillColor: col,
+            strokeColor: col
+	 }
+        });
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();

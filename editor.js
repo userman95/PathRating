@@ -130,7 +130,7 @@ function resize() {
 function info_box(data){
  
     info_window = new google.maps.InfoWindow({
-    content: '<button onclick="Rating(rate);" class="vbRow">Very Bad</button>',position: data.latLng
+    content: '<button onclick="Rating();" class="vbRow">Very Bad</button>',position: data.latLng
 	
   });
    info_window.open(map);

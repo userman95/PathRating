@@ -45,13 +45,14 @@ function init() {
 	
 //reading back the new color value
   map.data.setStyle(function(feature) {
-    var default_color = "white";
-    if (feature.getProperty("Color")!=x){
-        default_color = feature.getProperty("Color");
-      }
-      else if(feature.getProperty("Color")==null){
-          feature.setProperty("Color", x);
-      }
+   var colour = "white";
+        if (feature.getProperty("Rating") == null && feature.getProperty("Colour") == null ) {
+            feature.setProperty("Rating", PropertyValue);
+            feature.setProperty("Colour", PropertyValue);
+        }
+        if (feature.getProperty("Colour") != PropertyValue) {
+            var colour = feature.getProperty("Colour");
+        }
       return ({
 	      strokeColor: default_color,
       	      strokeWeight: 4

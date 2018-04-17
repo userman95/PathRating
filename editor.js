@@ -27,7 +27,7 @@ function init() {
         map.data.remove(event.feature);
     	});
   map.data.addListener("click",function(event){
-  	event.feature.setProperty("Color",'blue');
+    event.document.getElementById("dropdown-content").classList.toggle("show");
   });
   // Retrieve HTML elements.
   var left_column = document.getElementById('left-column');

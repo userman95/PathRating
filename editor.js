@@ -27,8 +27,8 @@ function init() {
   map.data.addListener('rightclick', function(event){
         map.data.remove(event.feature);
     	});
-  map.data.addListener("click",function(event){
-	event.info_box();
+  map.data.addListener("mouseover",function(){
+	info_box();
   });
   // Retrieve HTML elements.
   left_column = document.getElementById('left-column');
@@ -125,4 +125,5 @@ function info_box(){
   var infowindow = new google.maps.InfoWindow({
     content: contentString
   });
+   infowindow.open();
 }

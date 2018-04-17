@@ -17,7 +17,7 @@ body {
 #map-holder {
   float:right;
   height: 100%;
-  width: 75%;
+  width: 85%;
 }
 
 #geojson-output {
@@ -102,5 +102,5 @@ body {
 #left-column{
   float:left;
   height:100%;
-  width:25%;
+  width:15%;
 }

@@ -94,22 +94,10 @@ function deletepaths(){
 }
 
 //Colouring the paths
-function selected_color(rate,col){
+function selected_color(rate){
 	this.rate=rate;
-	switch(col){
-		case red:
-			x ='red';
-		case orange:
-			x='orange';
-		case white:
-			x='white';
-		case blue:
-			x='blue';
-		case green:
-			x='green';
-	}
   	rate.feature.setProperty("Rating", 1);
-	rate.feature.setProperty("Colour", x);
+	rate.feature.setProperty("Colour", 'red');
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();

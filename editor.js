@@ -28,6 +28,7 @@ function init() {
     	});
   map.data.addListener("click",console.log("SOMETHING"));
   // Retrieve HTML elements.
+  var left_column = document.getElementById('left-column');
   var mapContainer = document.getElementById('map-holder');
   geoJsonOutput = document.getElementById('geojson-output');
   downloadLink = document.getElementById('download-link');
@@ -109,4 +110,9 @@ function selected_color(event, x){
     color = x;
     map.data.overrideStyle(event.feature,{strokeColor: x});
     event.feature.setProperty("Color", x);
+}
+function resize() {
+  var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();
+  var stiliRect = left_column.getBoundingClientRect();
+  geoJsonOutput.style.height = stiliRect.bottom - geoJsonOutputRect.top - 8 + "px";
 }

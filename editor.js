@@ -4,6 +4,7 @@ var geoJsonOutput;
 var downloadLink;
 var left_column;
 var info_window;
+var selected;
 
 function init() {
   // Initialise the map.
@@ -27,9 +28,13 @@ function init() {
 
   map.data.addListener('rightclick', function(event){
         map.data.remove(event.feature);
-    	});
-  map.data.addListener("click",function(event){
-	info_box(event);
+  });
+	
+  map.data.addListener("click",function(clicked){
+	 selected=clicked.feature;
+	 map.data.revertStyle();
+  	 map.data.overrideStyle(selected,{strokeWeight: 6});
+	 info_box(event);
   });
   // Retrieve HTML elements.
   left_column = document.getElementById('left-column');
@@ -73,26 +78,6 @@ function bindDataLayerListeners(dataLayer) {
   dataLayer.addListener('addfeature', refreshGeoJsonFromData);
   dataLayer.addListener('removefeature', refreshGeoJsonFromData);
   dataLayer.addListener('setgeometry', refreshGeoJsonFromData);
-	
-/*var rating_counter = 0;
-  map.data.addListener('click', function(event) {
-          if(rating_counter == 0)
-             selected_color(event, '#000000');
-          else if(rating_counter == 1)
-            selected_color(event, '#ff0000');
-          else if(rating_counter == 2)
-            selected_color(event, '#ff8100');
-          else if(rating_counter == 3)
-            selected_color(event, '#e3ff00');
-          else if(rating_counter == 4)
-            selected_color(event, '#004c00');
-          else if(rating_counter == 5)
-            selected_color(event, '#00FF00');
-        rating_counter++;
-        if(rating_counter>5)
-          rating_counter = 0;
-    	});
-    */
 }
 	
 // Enable geojson output with the click of the button
@@ -110,32 +95,12 @@ function deletepaths(){
   map.data.forEach(function(e){map.data.remove(e);});
   geoJsonOutput.value=null;
 }
-function selected_color(feature,rate){
+
+//Colouring the paths
+function selected_color(rate){
 	
-		switch(rate){
-		case 1:
-			x = 'red';
-			break;
-		case 2:
-			x = 'yellow';
-			break;
-		case 3:
-			x = 'white';
-			break;
-		case 4:
-			x = 'blue';
-			break;
-		case 5:
-			x = 'green';
-			break;	
-	}
-    map.data.overrideStyle(feature,function() {
-	 return {
-            fillColor: x,
-            strokeColor: x
-	 }
-        });
-	feature.setProperty("Color", x);
+  	rate.feature.setProperty("Rating", 1);
+	rate.feature.setProperty("Colour", 'red');
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();

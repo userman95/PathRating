@@ -110,9 +110,8 @@ function deletepaths(){
   map.data.forEach(function(e){map.data.remove(e);});
   geoJsonOutput.value=null;
 }
-function selected_color(){
-    map.data.overrideStyle(feature,{strokeColor: 'red'});
-    feature.setProperty("Color", 'red');
+function selected_color(event.feature){
+    map.data.overrideStyle(event.feature,{strokeColor: 'red',fillColor:'red'});
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();

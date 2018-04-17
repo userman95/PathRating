@@ -40,7 +40,9 @@ function init() {
   var mapContainer = document.getElementById('map-holder');
   geoJsonOutput = document.getElementById('geojson-output');
   downloadLink = document.getElementById('download-link');
-	  
+  resize();
+  google.maps.event.addDomListener(window, 'resize', resize);
+	
 //reading back the new color value
   map.data.setStyle(function(feature) {
     var default_color = "white";

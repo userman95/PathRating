@@ -31,8 +31,9 @@ function init() {
         map.data.remove(event.feature);
   });
 	
-  map.data.addListener("click",function(clicked){
-	 info_box(clicked);
+  map.data.addListener("click",function(rate){
+	 Rtaing(rate)
+	//  info_box(clicked);
   });
   // Retrieve HTML elements.
   left_column = document.getElementById('left-column');

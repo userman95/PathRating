@@ -125,5 +125,5 @@ function info_box(){
   var infowindow = new google.maps.InfoWindow({
     content: contentString
   });
-   infowindow.open();
+   infowindow.open(map);
 }

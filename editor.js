@@ -26,7 +26,7 @@ function init() {
   map.data.addListener('rightclick', function(event){
         map.data.remove(event.feature);
     	});
-  map.data.addListener("click",alert('PRINT THIS'));
+  map.data.addListener("click",console.log("SOMETHING"));
   // Retrieve HTML elements.
   var mapContainer = document.getElementById('map-holder');
   geoJsonOutput = document.getElementById('geojson-output');
@@ -110,20 +110,3 @@ function selected_color(event, x){
     map.data.overrideStyle(event.feature,{strokeColor: x});
     event.feature.setProperty("Color", x);
 }
-
-/*document.getElementByClassName("dropdown-content").classList.toggle("show");
-
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}*/
-

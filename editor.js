@@ -110,10 +110,9 @@ function deletepaths(){
   map.data.forEach(function(e){map.data.remove(e);});
   geoJsonOutput.value=null;
 }
-function selected_color(event, x){
-    color = x;
-    map.data.overrideStyle(event.feature,{strokeColor: x});
-    event.feature.setProperty("Color", x);
+function selected_color(event){
+    map.data.overrideStyle(event.feature,{strokeColor: 'red'});
+    event.feature.setProperty("Color", 'red');
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();
@@ -123,7 +122,7 @@ function resize() {
 
 function info_box(data){
    info_window = new google.maps.InfoWindow({
-    content: '<button onclick="selected_color(event,"#000000");" class="vbRow">Very Bad</button>',position: data.latLng
+    content: '<button onclick="selected_color(event);" class="vbRow">Very Bad</button>',position: data.latLng
 	
   });
    info_window.open(map);

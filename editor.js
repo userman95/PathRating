@@ -3,6 +3,7 @@ var x;
 var geoJsonOutput;
 var downloadLink;
 var left_column;
+var info_window;
 
 function init() {
   // Initialise the map.
@@ -119,11 +120,11 @@ function resize() {
   var stiliRect = left_column.getBoundingClientRect();
   geoJsonOutput.style.height = stiliRect.bottom - geoJsonOutputRect.top - 8 + "px";
 }
-var contentString = 
-function info_box(data){
-  var infowindow = new google.maps.InfoWindow({
-    content: '<a href="#home">Home</a>++<p>SOMEEETHIIIIIIIIING</p>',position: data.latLng
 
+function info_box(data){
+   info_window = new google.maps.InfoWindow({
+    content: '<a href="#home">Home</a>++<p>SOMEEETHIIIIIIIIING</p>',position: data.latLng
+	
   });
-   infowindow.open(map);
+   info_window.open(map);
 }

@@ -26,8 +26,8 @@ function init() {
   map.data.addListener('rightclick', function(event){
         map.data.remove(event.feature);
     	});
-  map.data.addListener("click",function(){
-  	feature.setProperty("Color",'blue');
+  map.data.addListener("click",function(event){
+  	event.feature.setProperty("Color",'blue');
   });
   // Retrieve HTML elements.
   var left_column = document.getElementById('left-column');

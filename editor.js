@@ -77,6 +77,7 @@ function bindDataLayerListeners(dataLayer) {
   dataLayer.addListener('addfeature', refreshGeoJsonFromData);
   dataLayer.addListener('removefeature', refreshGeoJsonFromData);
   dataLayer.addListener('setgeometry', refreshGeoJsonFromData);
+  dataLayer.addListener('setproperty', refreshGeoJsonFromData);
 }
 	
 // Enable geojson output with the click of the button

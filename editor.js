@@ -6,6 +6,7 @@ var left_column;
 var info_window;
 var selected;
 var metritis = 0;
+var PropertyValue="unknown";
 
 function init() {
   // Initialise the map.

@@ -101,8 +101,8 @@ function deletepaths(){
 }
 
 //Colouring the paths
-function Rating(rate,number){
-	this.rate = rate;
+function Rating(number){
+	//this.rate = rate;
 	var number,col;
 	switch(number){
 		case 1:
@@ -114,11 +114,10 @@ function Rating(rate,number){
 		case 4:
 			col = 'blue';
 		case 5:
-			col = 'green';
-			
+			col = 'green';		
 	}
-	rate.feature.setProperty("Rating", number);
-	rate.feature.setProperty("Colour", col);
+	feature.setProperty("Rating", number);
+	feature.setProperty("Colour", col);
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();
@@ -128,7 +127,7 @@ function resize() {
 
 function info_box(data){
    info_window = new google.maps.InfoWindow({
-    content: '<button onclick="Rating(rate,1);" class="vbRow">Very Bad</button>',position: data.latLng
+    content: '<button onclick="Rating(1);" class="vbRow">Very Bad</button>',position: data.latLng
 	
   });
    info_window.open(map);

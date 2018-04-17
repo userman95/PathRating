@@ -2,6 +2,7 @@ var map;
 var x;
 var geoJsonOutput;
 var downloadLink;
+var left_column;
 
 function init() {
   // Initialise the map.
@@ -30,7 +31,7 @@ function init() {
     event.document.getElementById('dropdown-content').classList.toggle("show");
   });
   // Retrieve HTML elements.
-  var left_column = document.getElementById('left-column');
+  left_column = document.getElementById('left-column');
   var mapContainer = document.getElementById('map-holder');
   geoJsonOutput = document.getElementById('geojson-output');
   downloadLink = document.getElementById('download-link');
@@ -56,7 +57,7 @@ google.maps.event.addDomListener(window, 'load', init);
 // Refresh different components from other components.
 function refreshGeoJsonFromData() {
   map.data.toGeoJson(function(geoJson) {
-    geoJsonOutput.value = JSON.stringify(geoJson);
+    geoJsonOutput.value = JSON.stringify(geoJson,null,2);
     refreshDownloadLinkFromGeoJson();
   });
 }

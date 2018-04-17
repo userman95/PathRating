@@ -15,13 +15,12 @@
     <div id="left-column">
        <textarea id="geojson-output" placeholder="See edits in GeoJson." style="height:700px;"></textarea>
     </div>
-    <div id="dropdown-content">
-       <button onclick="selected_color(event,'red');" class="vbRow">Very Bad</button>
-       <button onclick="selected_color(event,'orange');" class="badRow">Bad</button>
-       <button onclick="selected_color(event,'black');" class="normalRow">Normal</button>
-       <button onclick="selected_color(event,'#004c00');" class="goodRow">Good</button>
-       <button onclick="selected_color(event,'#00FF00');" class="vgRow">Very Good</button>
-    </div>
+     <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+   
     <button onclick="geojsonOutput()" id="geo-toggle" class="btn btn-warning">GeoJson output</button>
     <button onclick="deletepaths()" id="deletepaths" >Delete All paths</button>
   	<a id="download-link" href="data:;base64," download="geojson.json"><button>Download GeoJson</button></a>

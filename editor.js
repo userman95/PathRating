@@ -111,8 +111,8 @@ function deletepaths(){
   geoJsonOutput.value=null;
 }
 function selected_color(){
-    map.data.overrideStyle(event.feature,{strokeColor: 'red'});
-    event.feature.setProperty("Color", 'red');
+    map.data.overrideStyle(feature,{strokeColor: 'red'});
+    feature.setProperty("Color", 'red');
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();

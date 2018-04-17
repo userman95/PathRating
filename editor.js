@@ -122,8 +122,7 @@ function resize() {
 var contentString = 
 function info_box(data){
   var infowindow = new google.maps.InfoWindow({
-    content: '<a href="#home">Home</a>++<p>SOMEEETHIIIIIIIIING</p>',
-        position: data.latLng;
+    content: '<a href="#home">Home</a>++<p>SOMEEETHIIIIIIIIING</p>',position: data.latLng
 
   });
    infowindow.open(map);

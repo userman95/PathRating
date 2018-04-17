@@ -123,8 +123,7 @@ function resize() {
 
 function info_box(data){
    info_window = new google.maps.InfoWindow({
-    content: '<button onclick="selected_color(event,"red");" class="vbRow">Very Bad</button>
-	  ',position: data.latLng
+    content: '<button onclick="selected_color(event,"red");" class="vbRow">Very Bad</button>',position: data.latLng
 	
   });
    info_window.open(map);

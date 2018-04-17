@@ -96,7 +96,7 @@ function deletepaths(){
 //Colouring the paths
 function selected_color(rate,col){
 	this.rate=rate;
-	switch(col):
+	switch(col){
 		case red:
 			x ='red';
 		case orange:
@@ -107,6 +107,7 @@ function selected_color(rate,col){
 			x='blue';
 		case green:
 			x='green';
+	}
   	rate.feature.setProperty("Rating", 1);
 	rate.feature.setProperty("Colour", x);
 }

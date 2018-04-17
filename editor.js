@@ -106,9 +106,18 @@ function Rating(rate,number){
 	var number,col;
 	switch(number){
 		case 1:
+			col ='red';
+		case 2:
+			col = 'orange';
+		case 3:
+			col = 'white';
+		case 4:
+			col = 'blue';
+		case 5:
+			col = 'green';
 			
 	}
-	rate.feature.setProperty("Rating", 1);
+	rate.feature.setProperty("Rating", number);
 	rate.feature.setProperty("Colour", col);
 }
 function resize() {
@@ -119,7 +128,7 @@ function resize() {
 
 function info_box(data){
    info_window = new google.maps.InfoWindow({
-    content: '<button onclick="Rating(rate);" class="vbRow">Very Bad</button>',position: data.latLng
+    content: '<button onclick="Rating(rate,1);" class="vbRow">Very Bad</button>',position: data.latLng
 	
   });
    info_window.open(map);

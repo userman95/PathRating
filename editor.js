@@ -32,7 +32,7 @@ function init() {
   });
 	
   map.data.addListener("click",function(rate){
-	 Rtaing(rate)
+	 Rating(rate)
 	//  info_box(clicked);
   });
   // Retrieve HTML elements.

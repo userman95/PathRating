@@ -30,10 +30,7 @@ function init() {
         map.data.remove(event.feature);
   });
 	
-  map.data.addListener("click",function(clicked){
-	 selected=clicked.feature;
-	 map.data.revertStyle();
-  	 map.data.overrideStyle(selected,{strokeWeight: 6});
+  map.data.addListener("click",function(event){
 	 info_box(event);
   });
   // Retrieve HTML elements.

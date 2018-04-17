@@ -105,7 +105,7 @@ function Rating(rate){
 	this.rate = rate;
 
 	rate.feature.setProperty("Rating", 1);
-	rate.feature.setProperty("Colour", currColour);
+	rate.feature.setProperty("Colour", 'red');
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();

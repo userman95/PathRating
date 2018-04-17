@@ -100,7 +100,7 @@ body {
 .show {display:block;}
 
 #left-column{
-  float:center;
+  float:left;
   height:100%;
   width:15%;
 }

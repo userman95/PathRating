@@ -119,7 +119,7 @@ function resize() {
   var stiliRect = left_column.getBoundingClientRect();
   geoJsonOutput.style.height = stiliRect.bottom - geoJsonOutputRect.top - 8 + "px";
 }
-var contentString = '<a href="#home">Home</a>++<p>SOMEEETHIIIIIIIIING</p>;
+var contentString = '<a href="#home">Home</a>++<p>SOMEEETHIIIIIIIIING</p>';
 
 function info_box(){
   var infowindow = new google.maps.InfoWindow({

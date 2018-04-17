@@ -55,7 +55,7 @@ function init() {
             var colour = feature.getProperty("Colour");
         }
       return ({
-	      strokeColor: default_color,
+	      strokeColor: colour,
       	      strokeWeight: 4
       	      });
 });

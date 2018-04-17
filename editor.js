@@ -135,7 +135,7 @@ function selected_color(feature,rate){
             strokeColor: x
 	 }
         });
-	event.feature.setProperty("Color", x);
+	feature.setProperty("Color", x);
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();

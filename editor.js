@@ -27,7 +27,7 @@ function init() {
   map.data.addListener('rightclick', function(event){
         map.data.remove(event.feature);
     	});
-  map.data.addListener("click",function(event){
+  map.data.addListener("mouseover",function(event){
     event.document.getElementById('myDropdown').classList.toggle("show");
   });
   // Retrieve HTML elements.

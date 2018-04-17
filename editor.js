@@ -103,8 +103,8 @@ function deletepaths(){
 }
 
 //Colouring the paths
-function Rating(rate){
-	this.rate = rate;
+function Rating(){
+	//this.rate = rate;
 	/*var number,col;
 	switch(number){
 		case 1:
@@ -118,8 +118,8 @@ function Rating(rate){
 		case 5:
 			col = 'green';		
 	}*/
-	rate.feature.setProperty("Rating", 1);
-	rate.feature.setProperty("Colour", 'red');
+	selected.feature.setProperty("Rating", 1);
+	selected.feature.setProperty("Colour", 'red');
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();

@@ -57,36 +57,36 @@ body {
 .vbRow {
     background-color: red;
     color: white;
-    padding: 16px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 10px;
     border: none;
 }
 .badRow {
     background-color: orange;
     color: white;
-    padding: 16px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 10px;
     border: none;
 }
 .normalRow {
     background-color: #000000;
     color: white;
-    padding: 16px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 10px;
     border: none;
 }
 .goodRow {
     background-color: #004c00;
     color: white;
-    padding: 16px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 10px;
     border: none;
 }
 .vgRow {
     background-color: #004c00;
     color: white;
-    padding: 16px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 10px;
     border: none;
 }
 .dropdown{

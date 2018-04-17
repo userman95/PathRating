@@ -103,20 +103,8 @@ function deletepaths(){
 //Colouring the paths
 function Rating(rate){
 	this.rate = rate;
-	
-	var currColour;
-	  
-	if (metritis==5){metritis=0;}
-	  
-	metritis++;
-	  
-	if (metritis==1){ currColour='red';}else 
-	if (metritis==2){ currColour='orange';}else
-	if (metritis==3){ currColour='yellow';}else
-	if (metritis==4){ currColour='green';}else
-	if (metritis==5){ currColour='blue';}
 
-	rate.feature.setProperty("Rating", metritis);
+	rate.feature.setProperty("Rating", 1);
 	rate.feature.setProperty("Colour", currColour);
 }
 function resize() {

@@ -31,9 +31,6 @@ function init() {
   });
 	
   map.data.addListener("click",function(clicked){
-	 selected=clicked.feature;
-	 map.data.revertStyle();
-  	 map.data.overrideStyle(selected,{strokeWeight: 6});
 	 info_box(clicked);
   });
   // Retrieve HTML elements.
@@ -121,7 +118,7 @@ function resize() {
 
 function info_box(data){
    info_window = new google.maps.InfoWindow({
-    content: '<button onclick="selected_color(1);" class="vbRow">Very Bad</button>',position: data.latLng
+    content: '<button onclick="selected_color(1,red);" class="vbRow">Very Bad</button>',position: data.latLng
 	
   });
    info_window.open(map);

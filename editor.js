@@ -26,7 +26,9 @@ function init() {
   map.data.addListener('rightclick', function(event){
         map.data.remove(event.feature);
     	});
-  map.data.addListener("click",console.log("SOMETHING"));
+  map.data.addListener("click",function(){
+  	feature.setProperty("Color",'blue');
+  });
   // Retrieve HTML elements.
   var left_column = document.getElementById('left-column');
   var mapContainer = document.getElementById('map-holder');

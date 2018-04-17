@@ -28,11 +28,7 @@ function init() {
         map.data.remove(event.feature);
     	});
   map.data.addListener("mouseover",function(event){
-    event.document.getElementById('myDropdown').classList.toggle("show");
-	    css({
-        top: event.pageY + "px",
-        left: event.pageX + "px"
-    });
+	info_box();
   });
   // Retrieve HTML elements.
   left_column = document.getElementById('left-column');
@@ -123,3 +119,11 @@ function resize() {
   var stiliRect = left_column.getBoundingClientRect();
   geoJsonOutput.style.height = stiliRect.bottom - geoJsonOutputRect.top - 8 + "px";
 }
+function info_box(){
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+}
+var contentString = '<a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>'

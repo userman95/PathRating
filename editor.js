@@ -28,12 +28,15 @@ function init() {
   bindDataLayerListeners(map.data);
 
   map.data.addListener('rightclick', function(event){
-        map.data.remove(event.feature);
+	  info_box(event);
+      //  map.data.remove(event.feature);
   });
 	
   map.data.addListener("click",function(selected){
 	// Rating(rate);
-	 info_box(selected);
+    selected = selected.feature;
+    map.data.revertStyle();
+    map.data.overrideStyle(selected,{strokeWeight: 6});
   });
   // Retrieve HTML elements.
   left_column = document.getElementById('left-column');
@@ -124,12 +127,10 @@ function resize() {
   geoJsonOutput.style.height = stiliRect.bottom - geoJsonOutputRect.top - 8 + "px";
 }
 
-function info_box(selected){
-    selected = selected.feature;
-    map.data.revertStyle();
-    map.data.overrideStyle(selected,{strokeWeight: 6});
+function info_box(data){
+ 
     info_window = new google.maps.InfoWindow({
-    content: '<button onclick="Rating(rate);" class="vbRow">Very Bad</button>',position: selected.latLng
+    content: '<button onclick="Rating(rate);" class="vbRow">Very Bad</button>',position: data.latLng
 	
   });
    info_window.open(map);

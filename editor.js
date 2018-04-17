@@ -95,7 +95,7 @@ function deletepaths(){
 }
 
 //Colouring the paths
-function selected_color(rate){
+function Rating(rate){
 	this.rate = rate;
 	
 	var currColour;

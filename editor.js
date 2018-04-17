@@ -29,6 +29,10 @@ function init() {
     	});
   map.data.addListener("mouseover",function(event){
     event.document.getElementById('myDropdown').classList.toggle("show");
+	    css({
+        top: event.pageY + "px",
+        left: event.pageX + "px"
+    });
   });
   // Retrieve HTML elements.
   left_column = document.getElementById('left-column');

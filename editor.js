@@ -27,8 +27,8 @@ function init() {
   map.data.addListener('rightclick', function(event){
         map.data.remove(event.feature);
     	});
-  map.data.addListener("click",function(){
-	info_box();
+  map.data.addListener("click",function(event){
+	info_box(event);
   });
   // Retrieve HTML elements.
   left_column = document.getElementById('left-column');
@@ -119,11 +119,12 @@ function resize() {
   var stiliRect = left_column.getBoundingClientRect();
   geoJsonOutput.style.height = stiliRect.bottom - geoJsonOutputRect.top - 8 + "px";
 }
-var contentString = '<a href="#home">Home</a>++<p>SOMEEETHIIIIIIIIING</p>';
-
-function info_box(){
+var contentString = 
+function info_box(data){
   var infowindow = new google.maps.InfoWindow({
-    content: contentString
+    content: '<a href="#home">Home</a>++<p>SOMEEETHIIIIIIIIING</p>',
+        position: data.latLng;
+
   });
    infowindow.open(map);
 }

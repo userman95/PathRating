@@ -31,7 +31,9 @@ function init() {
   });
 	
   map.data.addListener("click",function(clicked){
-
+	 selected=clicked.feature;
+	 map.data.revertStyle();
+  	 map.data.overrideStyle(selected,{strokeWeight: 6});
 	 info_box(event);
   });
   // Retrieve HTML elements.
@@ -96,7 +98,7 @@ function deletepaths(){
 
 //Colouring the paths
 function selected_color(rate){
-	
+	this.rate=rate;
   	rate.feature.setProperty("Rating", 1);
 	rate.feature.setProperty("Colour", 'red');
 }

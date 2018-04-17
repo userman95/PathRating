@@ -33,8 +33,8 @@ function init() {
   });
 	
   map.data.addListener("click",function(rate){
-	 Rating(rate)
-	//  info_box(clicked);
+	// Rating(rate);
+	 info_box(rate);
   });
   // Retrieve HTML elements.
   left_column = document.getElementById('left-column');
@@ -101,11 +101,15 @@ function deletepaths(){
 }
 
 //Colouring the paths
-function Rating(rate){
+function Rating(rate,number){
 	this.rate = rate;
-
+	var number,col;
+	switch(number){
+		case 1:
+			
+	}
 	rate.feature.setProperty("Rating", 1);
-	rate.feature.setProperty("Colour", 'red');
+	rate.feature.setProperty("Colour", col);
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();

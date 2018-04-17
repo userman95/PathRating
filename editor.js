@@ -30,8 +30,11 @@ function init() {
         map.data.remove(event.feature);
   });
 	
-  map.data.addListener("click",function(event){
-	 info_box(event);
+  map.data.addListener("click",function(clicked){
+	 selected=clicked.feature;
+	 map.data.revertStyle();
+  	 map.data.overrideStyle(selected,{strokeWeight: 6});
+	 info_box(clicked);
   });
   // Retrieve HTML elements.
   left_column = document.getElementById('left-column');
@@ -94,10 +97,21 @@ function deletepaths(){
 }
 
 //Colouring the paths
-function selected_color(rate){
+function selected_color(rate,col){
 	this.rate=rate;
+	switch(col):
+		case red:
+			x ='red';
+		case orange:
+			x='orange';
+		case white:
+			x='white';
+		case blue:
+			x='blue';
+		case green:
+			x='green';
   	rate.feature.setProperty("Rating", 1);
-	rate.feature.setProperty("Colour", 'red');
+	rate.feature.setProperty("Colour", x);
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();

@@ -5,7 +5,6 @@ var downloadLink;
 var left_column;
 var info_window;
 var selected;
-var metritis = 0;
 var PropertyValue="unknown";
 
 function init() {
@@ -101,9 +100,9 @@ function deletepaths(){
 }
 
 //Colouring the paths
-function Rating(number){
-	//this.rate = rate;
-	var number,col;
+function Rating(rate){
+	this.rate = rate;
+	/*var number,col;
 	switch(number){
 		case 1:
 			col ='red';
@@ -115,9 +114,9 @@ function Rating(number){
 			col = 'blue';
 		case 5:
 			col = 'green';		
-	}
-	this.feature.setProperty("Rating", number);
-	this.feature.setProperty("Colour", col);
+	}*/
+	rate.feature.setProperty("Rating", 1);
+	rate.feature.setProperty("Colour", 'red');
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();
@@ -127,7 +126,7 @@ function resize() {
 
 function info_box(data){
    info_window = new google.maps.InfoWindow({
-    content: '<button onclick="Rating(1);" class="vbRow">Very Bad</button>',position: data.latLng
+    content: '<button onclick="Rating(rate);" class="vbRow">Very Bad</button>',position: data.latLng
 	
   });
    info_window.open(map);

@@ -28,16 +28,19 @@ function init() {
   bindDataLayerListeners(map.data);
 
   map.data.addListener('rightclick', function(event){
-	  info_box(event);
-      //  map.data.remove(event.feature);
+         map.data.remove(event.feature);
+  });
+
+map.data.addListener('mouseover', function(event) {
+	selected=event.feature;
+   	 map.data.revertStyle();
+    	 map.data.overrideStyle(event.feature, {strokeWeight: 8});
+    });
+  map.data.addListener("click",function(event){
+	 // Rating(rate);
+         info_box(event);
   });
 	
-  map.data.addListener("click",function(selected){
-	// Rating(rate);
-    selected = selected.feature;
-    map.data.revertStyle();
-    map.data.overrideStyle(selected,{strokeWeight: 6});
-  });
   // Retrieve HTML elements.
   left_column = document.getElementById('left-column');
   var mapContainer = document.getElementById('map-holder');
@@ -104,7 +107,8 @@ function deletepaths(){
 
 //Colouring the paths
 function Rating(number){
-	//this.rate = rate;
+	document.getElementById('demo').style.color="blue";
+/*	//this.rate = rate;
 	var number,col;
 	switch(number){
 		case 1:
@@ -119,7 +123,7 @@ function Rating(number){
 			col = 'green';		
 	}
 	map.data.feature.setProperty("Rating", number);
-	map.data.feature.setProperty("Colour", 'red');
+	map.data.feature.setProperty("Colour", 'red');*/
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();
@@ -128,10 +132,12 @@ function resize() {
 }
 
 function info_box(data){
- 
+      if(info_window){
+	info_window.close();
+      }
     info_window = new google.maps.InfoWindow({
-    content: '<button onclick="Rating(1);" class="vbRow">Very Bad</button>',position: data.latLng
+    content: '<button id="demo" onclick="Rating()" class="vbRow">Very Bad</button>',position: data.latLng
 	
-  });
+     });
    info_window.open(map);
 }

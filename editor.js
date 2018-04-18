@@ -113,7 +113,7 @@ function Rating(feature){
 			      strokeWeight: 4
 			      });
 		});
-	}
+	
 	//document.getElementById('demo').style.color="blue";
 /*	//this.rate = rate;
 	var number,col;

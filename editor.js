@@ -107,13 +107,7 @@ function deletepaths(){
 
 //Colouring the paths
 function Rating(feature){
-	map.data.setStyle(function(feature) {
-			return  ({
-			      strokeColor: 'red',
-			      strokeWeight: 4
-			      });
-		});
-	
+	this.feature=feature;
 	//document.getElementById('demo').style.color="blue";
 /*	//this.rate = rate;
 	var number,col;
@@ -128,9 +122,9 @@ function Rating(feature){
 			col = 'blue';
 		case 5:
 			col = 'green';		
-	}
-	map.data.feature.setProperty("Rating", number);
-	map.data.feature.setProperty("Colour", 'red');*/
+	}*/
+	feature.feature.setProperty("Rating", 1);
+	feature.feature.setProperty("Colour", 'red');
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();

@@ -37,8 +37,7 @@ map.data.addListener('mouseover', function(clicked) {
         map.data.overrideStyle(array[0], {strokeWeight: 8});
     });
 map.data.addListener('mouseout', function(clicked) {
-	if(array>1)	
-	map.data.overrideStyle(array[0], {strokeWeight: 4});
+	map.data.revertStyle();
     });
   map.data.addListener("click",function(event){
 	 // Rating(rate);

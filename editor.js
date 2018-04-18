@@ -109,8 +109,8 @@ function deletepaths(){
 function Rating(event){
 	
 	//document.getElementById('demo').style.color="blue";
-/*	//this.rate = rate;
-	var number,col;
+	this.event = event;
+/*	var number,col;
 	switch(number){
 		case 1:
 			col ='red';

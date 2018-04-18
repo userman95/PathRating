@@ -108,7 +108,7 @@ function deletepaths(){
 //Colouring the paths
 function Rating(){
 	
-	if(selected.feature.getProperty("Colour",colour){
+	if(selected.feature.getProperty("Colour",colour)){
 	   	return  ({
 	      strokeColor: 'red',
       	      strokeWeight: 4

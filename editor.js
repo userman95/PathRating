@@ -27,10 +27,9 @@ function init() {
 
   bindDataLayerListeners(map.data);
 
-  map.data.addListener('rightclick', function(event){
+map.data.addListener('rightclick', function(event){
          map.data.remove(event.feature);
-  });
-
+    });
 map.data.addListener('mouseover', function(clicked) {
 	selected=clicked.feature;
     	 map.data.overrideStyle(selected, {strokeWeight: 8});
@@ -39,11 +38,10 @@ map.data.addListener('mouseout', function(clicked) {
 	selected=null;
 	map.data.overrideStyle(clicked.featured, {strokeWeight: 4});
     });
-});
   map.data.addListener("click",function(event){
 	 // Rating(rate);
          info_box(event);
-  });
+    });
 	
   // Retrieve HTML elements.
   left_column = document.getElementById('left-column');

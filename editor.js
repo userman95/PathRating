@@ -103,7 +103,11 @@ function deletepaths(){
   map.data.forEach(function(e){map.data.remove(e);});
   geoJsonOutput.value=null;
 }
-
+function ratingFunction(rating,col,feature) {
+	feature.setProperty("Rating",rating);
+	feature.setProperty("Color",col);
+	map.data.overrideStyle(feature,{strokeWeight:4});
+}
 //Colouring the paths
 function Rating(rate){
 	this.rate=rate;
@@ -125,14 +129,10 @@ function Rating(rate){
 			col = 'green';
 			break;	
 	}
-	var currentFeature=selected;
-	ratingFunction(rate,col,currentFeature);
+	
+	ratingFunction(rate,col,selected);
 }
-function ratingFunction(rating,col,feature) {
-	feature.setProperty("Rating",rating);
-	feature.setProperty("Color",col);
-	map.data.overrideStyle(feature,{strokeWeight:4});
-}
+
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();
   var stiliRect = left_column.getBoundingClientRect();

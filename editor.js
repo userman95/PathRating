@@ -31,10 +31,9 @@ function init() {
          map.data.remove(event.feature);
   });
 
-map.data.addListener('mouseover', function(event) {
-	selected=event.feature;
-   	 map.data.revertStyle();
-    	 map.data.overrideStyle(event.feature, {strokeWeight: 8});
+map.data.addListener('mouseover', function(clicked) {
+	selected=clicked.feature;
+    	 map.data.overrideStyle(selected, {strokeWeight: 8});
     });
   map.data.addListener("click",function(event){
 	 // Rating(rate);
@@ -106,25 +105,33 @@ function deletepaths(){
 }
 
 //Colouring the paths
-function Rating(event){
-	map.data.remove(event.feature);
-/*	//document.getElementById('demo').style.color="blue";
-	this.event = event;
-	var number,col;
-	switch(number){
+function Rating(rate){
+	this.rate=rate;
+	var col;
+	switch(rate){
 		case 1:
-			col ='red';
+			col = 'red';
+			break;
 		case 2:
-			col = 'orange';
+			col = 'yellow';
+			break;
 		case 3:
 			col = 'white';
+			break;
 		case 4:
 			col = 'blue';
+			break;
 		case 5:
-			col = 'green';		
+			col = 'green';
+			break;	
 	}
-	event.feature.setProperty("Rating", 1);
-	event.feature.setProperty("Colour", 'red');*/
+	var currentFeature=selected;
+	ratingFunction(rate,col,currentFeature);
+}
+function ratingFunction(rating,col,feature) {
+	feature.setProperty("Rating",rating);
+	feature.setProperty("Color",col);
+	map.data.overrideStyle(feature,{strokeWeight:4});
 }
 function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();

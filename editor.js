@@ -106,8 +106,9 @@ function deletepaths(){
 }
 
 //Colouring the paths
-function Rating(number){
-	document.getElementById('demo').style.color="blue";
+function Rating(){
+	alert('something');
+	//document.getElementById('demo').style.color="blue";
 /*	//this.rate = rate;
 	var number,col;
 	switch(number){

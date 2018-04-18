@@ -6,7 +6,8 @@ var left_column;
 var info_window;
 var selected;
 var PropertyValue="unknown";
-
+var totalSelected=0;
+var array = [];
 function init() {
   // Initialise the map.
   map = new google.maps.Map(document.getElementById('map-holder'), {
@@ -32,11 +33,12 @@ map.data.addListener('rightclick', function(event){
     });
 map.data.addListener('mouseover', function(clicked) {
 	selected=clicked.feature;
-    	 map.data.overrideStyle(selected, {strokeWeight: 8});
+	array[0]=selected;
+        map.data.overrideStyle(array[0], {strokeWeight: 8});
     });
 map.data.addListener('mouseout', function(clicked) {
-	selected=null;
-	map.data.overrideStyle(clicked.featured, {strokeWeight: 4});
+	if(array>1)	
+	map.data.overrideStyle(array[0], {strokeWeight: 4});
     });
   map.data.addListener("click",function(event){
 	 // Rating(rate);
@@ -132,9 +134,8 @@ function Rating(rate){
 			col = 'green';
 			break;	
 	}
-	feature.setProperty("Rating",rating);
-	feature.setProperty("Color",col);
-	//ratingFunction(rate,col,selected);
+
+	ratingFunction(rate,col,selected);
 }
 
 function resize() {

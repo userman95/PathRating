@@ -107,7 +107,16 @@ function deletepaths(){
 
 //Colouring the paths
 function Rating(){
-	alert('something');
+	
+	if(selected.feature.getProperty("Colour",colour){
+	   	return  ({
+	      strokeColor: 'red',
+      	      strokeWeight: 4
+      	      });
+	   }
+	else{
+		alert('something');
+	}
 	//document.getElementById('demo').style.color="blue";
 /*	//this.rate = rate;
 	var number,col;

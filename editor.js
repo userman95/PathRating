@@ -106,16 +106,13 @@ function deletepaths(){
 }
 
 //Colouring the paths
-function Rating(selected){
-	
-	if(selected.feature.getProperty("Colour"!=colour)){
-	   	alert('something');
-	   }
-	else{
-		return  ({
-		      strokeColor: 'red',
-		      strokeWeight: 4
-		      });
+function Rating(feature){
+	map.data.setStyle(function(feature) {
+			return  ({
+			      strokeColor: 'red',
+			      strokeWeight: 4
+			      });
+		}
 	}
 	//document.getElementById('demo').style.color="blue";
 /*	//this.rate = rate;

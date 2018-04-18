@@ -106,16 +106,16 @@ function deletepaths(){
 }
 
 //Colouring the paths
-function Rating(){
+function Rating(selected){
 	
-	if(selected.feature.getProperty("Colour",colour)){
-	   	return  ({
-	      strokeColor: 'red',
-      	      strokeWeight: 4
-      	      });
+	if(selected.feature.getProperty("Colour"!=colour)){
+	   	alert('something');
 	   }
 	else{
-		alert('something');
+		return  ({
+		      strokeColor: 'red',
+		      strokeWeight: 4
+		      });
 	}
 	//document.getElementById('demo').style.color="blue";
 /*	//this.rate = rate;

@@ -35,6 +35,11 @@ map.data.addListener('mouseover', function(clicked) {
 	selected=clicked.feature;
     	 map.data.overrideStyle(selected, {strokeWeight: 8});
     });
+map.data.addListener('mouseout', function(clicked) {
+	selected=null;
+	map.data.overrideStyle(clicked.featured, {strokeWeight: 4});
+    });
+});
   map.data.addListener("click",function(event){
 	 // Rating(rate);
          info_box(event);
@@ -129,8 +134,9 @@ function Rating(rate){
 			col = 'green';
 			break;	
 	}
-	
-	ratingFunction(rate,col,selected);
+	feature.setProperty("Rating",rating);
+	feature.setProperty("Color",col);
+	//ratingFunction(rate,col,selected);
 }
 
 function resize() {

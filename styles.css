@@ -59,34 +59,39 @@ body {
     color: white;
     text-align: center;
     font-size: 10px;
+    border:none;
 }
 .badRow {
     background-color: orange;
-    width: 18px;
+    width: 50px;
     color: white;
     text-align: center;  
     font-size: 10px;
+    border:none;
 }
 .normalRow {
     background-color: #e86b97;
-    width: 18px;
+    width: 50px;
     color: white;
     text-align: center;
     font-size: 10px;
+    border:none; 
 }
 .goodRow {
     background-color: blue;
-    width: 18px;
+    width: 50px;
     color: white;
     text-align: center;
     font-size: 10px;
+    border:none;
 }
 .vgRow {
     background-color: #004c00;
-    width: 18px;
+    width: 50px;
     color: white;
     text-align: center;
     font-size: 10px;
+    border:none;
 }
 .dropdown-content {
     display: none;

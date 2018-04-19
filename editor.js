@@ -146,7 +146,7 @@ function info_box(data){
       }
     info_window = new google.maps.InfoWindow({
     content: '<button id="demo" onclick="Rating(1)" class="vbRow">Very Bad</button>'
-	    +'<button id="demo" onclick="Rating(2)" class="badRow">Bad</button>',position: data.latLng
+	    +'<br><button id="demo" onclick="Rating(2)" class="badRow">Bad</button>',position: data.latLng
 	
      });
    info_window.open(map);

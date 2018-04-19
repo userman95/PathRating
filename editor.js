@@ -149,7 +149,7 @@ function info_box(data){
 	    +'<br><button id="demo" onclick="Rating(2)" class="badRow">   Bad   </button>'
 	    +'<br><button id="demo" onclick="Rating(3)" class="normalRow">  Normal </button>'
 	    +'<br><button id="demo" onclick="Rating(4)" class="goodRow">   Good  </button>'
-	    +'<br><button id="demo" onclick="Rating(5)" class="vgRow">Very Good</button>',position: data.latLng,maxWidth: 50
+	    +'<br><button id="demo" onclick="Rating(5)" class="vgRow">Very Good</button>',maxWidth: 500,position: data.latLng
 	
      });
    info_window.open(map);

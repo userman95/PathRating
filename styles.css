@@ -56,9 +56,10 @@ body {
 .vbRow {
     background-color: red;
     width: 90px;
+  height: 
     color: black;
     text-align: center;
-    font-size: 10px;
+    font-size: 15px;
     border:none;
 }
 .badRow {
@@ -66,7 +67,7 @@ body {
     width: 90px;
     color: black;
     text-align: center;  
-    font-size: 10px;
+    font-size: 15px;
     border:none;
 }
 .normalRow {
@@ -74,7 +75,7 @@ body {
     width: 90px;
     color: black;
     text-align: center;
-    font-size: 10px;
+    font-size: 15px;
     border:none; 
 }
 .goodRow {
@@ -82,7 +83,7 @@ body {
     width: 90px;
     color: black;
     text-align: center;
-    font-size: 10px;
+    font-size: 15px;
     border:none;
 }
 .vgRow {
@@ -90,7 +91,7 @@ body {
     width: 90px;
     color: black;
     text-align: center;
-    font-size: 10px;
+    font-size: 15px;
     border:none;
 }
 .dropdown-content {

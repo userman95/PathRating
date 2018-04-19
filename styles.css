@@ -19,7 +19,10 @@ body {
   height: 100%;
   width: 85%;
 }
-
+.gm-style-iw {
+width: 300px; 
+min-height: 150px;
+}
 #geojson-output {
   width: 100%;
   -webkit-box-sizing: border-box; /* <=iOS4, <= Android  2.3 */

@@ -109,7 +109,7 @@ function deletepaths(){
 }
 function ratingFunction(rating,col,feature) {
 	feature.setProperty("Rating",rating);
-	feature.setProperty("Color",col);
+	feature.setProperty("Colour",col);
 	map.data.overrideStyle(feature,{strokeWeight:4});
 }
 //Colouring the paths

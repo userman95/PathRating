@@ -133,7 +133,7 @@ function Rating(rate){
 			col = 'green';
 			break;	
 	}
-	selected.setProperty("Rating",rating);
+	selected.setProperty("Rating",rate);
 	selected.setProperty("Colour",col);
 	//map.data.overrideStyle(feature,{strokeWeight:4});
 	//ratingFunction(rate,col,selected);

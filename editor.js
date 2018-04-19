@@ -135,6 +135,7 @@ function Rating(rate){
 	}
 
 	ratingFunction(rate,col,selected);
+	refreshGeoJsonFromData();
 }
 
 function resize() {

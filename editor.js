@@ -132,6 +132,9 @@ function Rating(rate){
 	selected.setProperty("Rating",rate);
 	selected.setProperty("Colour",col);
 	refreshGeoJsonFromData();
+	 if(info_window){
+	info_window.close();
+      }
 }
 
 function resize() {

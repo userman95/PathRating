@@ -18,7 +18,7 @@ function init() {
     fullscreenControl: false,
     mapTypeId: 'satellite'
   });
-  map.data.loadGeoJson('data/final.json')
+  map.data.loadGeoJson('data/Π2013139.json')
   map.data.setControls(['Point', 'LineString', 'Polygon']);
   map.data.setStyle({
     editable: true,

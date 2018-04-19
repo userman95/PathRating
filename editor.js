@@ -60,7 +60,7 @@ map.data.addListener('mouseout', function(clicked) {
             feature.setProperty("Colour", PropertyValue);
         }
         if (feature.getProperty("Colour") != PropertyValue) {
-            var colour = feature.getProperty("Colour");
+             colour = feature.getProperty("Colour");
         }
       return ({
 	      strokeColor: colour,

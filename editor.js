@@ -145,13 +145,13 @@ function info_box(data){
 	info_window.close();
       }
     info_window = new google.maps.InfoWindow({
-    content:'<b><p>Choose a color to select a rating for the selected path</p></b><br>' 
+    content:'<b><p>Choose a color to select a rating for the selected path</p></b>' 
 	    +'<button id="demo" onclick="Rating(1)" class="vbRow">Very Bad </button>'
 	    +'<br><button id="demo" onclick="Rating(2)" class="badRow">   Bad   </button>'
 	    +'<br><button id="demo" onclick="Rating(3)" class="normalRow">  Normal </button>'
 	    +'<br><button id="demo" onclick="Rating(4)" class="goodRow">   Good  </button>'
 	    +'<br><button id="demo" onclick="Rating(5)" class="vgRow">Very Good</button>',
-	    maxWidth: 200,
+	    maxWidth: 150,
 	    position: data.latLng
 	
      });

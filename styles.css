@@ -59,7 +59,6 @@ body {
     color: white;
     text-align: center;
     font-size: 10px;
-    border-style: groove;
 }
 .badRow {
     background-color: orange;
@@ -67,7 +66,6 @@ body {
     color: white;
     text-align: center;  
     font-size: 10px;
-    border-style: groove;
 }
 .normalRow {
     background-color: #e86b97;
@@ -75,7 +73,6 @@ body {
     color: white;
     text-align: center;
     font-size: 10px;
-    border-style: groove;
 }
 .goodRow {
     background-color: blue;
@@ -83,7 +80,6 @@ body {
     color: white;
     text-align: center;
     font-size: 10px;
-    border-style: groove;
 }
 .vgRow {
     background-color: #004c00;
@@ -91,7 +87,6 @@ body {
     color: white;
     text-align: center;
     font-size: 10px;
-    border-style: groove;
 }
 .dropdown-content {
     display: none;

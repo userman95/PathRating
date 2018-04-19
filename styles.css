@@ -55,40 +55,40 @@ body {
 /*dropdown menu*/
 .vbRow {
     background-color: red;
-    width: 50px;
-    color: white;
+    width: 90px;
+    color: black;
     text-align: center;
     font-size: 10px;
     border:none;
 }
 .badRow {
     background-color: orange;
-    width: 50px;
-    color: white;
+    width: 90px;
+    color: black;
     text-align: center;  
     font-size: 10px;
     border:none;
 }
 .normalRow {
     background-color: #e86b97;
-    width: 50px;
-    color: white;
+    width: 90px;
+    color: black;
     text-align: center;
     font-size: 10px;
     border:none; 
 }
 .goodRow {
     background-color: blue;
-    width: 50px;
-    color: white;
+    width: 90px;
+    color: black;
     text-align: center;
     font-size: 10px;
     border:none;
 }
 .vgRow {
     background-color: #004c00;
-    width: 50px;
-    color: white;
+    width: 90px;
+    color: black;
     text-align: center;
     font-size: 10px;
     border:none;

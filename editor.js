@@ -120,7 +120,7 @@ function Rating(rate){
 			col = 'yellow';
 			break;
 		case 3:
-			col = 'white';
+			col = '#e86b97';
 			break;
 		case 4:
 			col = 'blue';

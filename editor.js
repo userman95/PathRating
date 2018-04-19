@@ -107,11 +107,7 @@ function deletepaths(){
   map.data.forEach(function(e){map.data.remove(e);});
   geoJsonOutput.value=null;
 }
-/*function ratingFunction(rating,col,feature) {
-	feature.setProperty("Rating",rating);
-	feature.setProperty("Colour",col);
-	map.data.overrideStyle(feature,{strokeWeight:4});
-}*/
+
 //Colouring the paths
 function Rating(rate){
 	this.rate=rate;
@@ -135,8 +131,6 @@ function Rating(rate){
 	}
 	selected.setProperty("Rating",rate);
 	selected.setProperty("Colour",col);
-	//map.data.overrideStyle(feature,{strokeWeight:4});
-	//ratingFunction(rate,col,selected);
 	refreshGeoJsonFromData();
 }
 
@@ -151,7 +145,8 @@ function info_box(data){
 	info_window.close();
       }
     info_window = new google.maps.InfoWindow({
-    content: '<button id="demo" onclick="Rating(1)" class="vbRow">Very Bad</button>',position: data.latLng
+    content: '<button id="demo" onclick="Rating(1)" class="vbRow">Very Bad</button>'
+	    +'<button id="demo" onclick="Rating(2)" class="badRow">Bad</button>',position: data.latLng
 	
      });
    info_window.open(map);

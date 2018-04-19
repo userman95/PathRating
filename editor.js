@@ -54,7 +54,7 @@ map.data.addListener('mouseout', function(clicked) {
 	
 //reading back the new color value
   map.data.setStyle(function(feature) {
-   var colour = "white";
+   var colour = "black";
         if (feature.getProperty("Rating") == null && feature.getProperty("Colour") == null ) {
             feature.setProperty("Rating", PropertyValue);
             feature.setProperty("Colour", PropertyValue);

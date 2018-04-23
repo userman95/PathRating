@@ -17,14 +17,11 @@ var array = [];
     storageBucket: "newproject-a8358.appspot.com",
     messagingSenderId: "1004235886520"
   };
-var firebase = require('firebase/app');
-require('firebase/auth');
-require('firebase/database');
-
   firebase.initializeApp(config);
-       var bigOne = document.getElementById('bigOne');
-        var dbref = firebase.database.ref();
+        var bigOne = document.getElementById('bigOne');
+        var dbref = firebase.database.ref().child('text');
         dbref.on('value',snap => bigOne.innerText = snap.val());
+
 function init() {
   // Initialise the map.
   map = new google.maps.Map(document.getElementById('map-holder'), {

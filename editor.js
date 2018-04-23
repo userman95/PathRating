@@ -8,7 +8,7 @@ var selected;
 var PropertyValue="unknown";
 var totalSelected=0;
 var array = [];
-window.alert(firebase.initializeApp(config));
+window.alert(firebase.initializeApp(config).name);
 function storeValue(){
         var bigOne = document.getElementById('bigOne');
         var dbref = firebase.database.ref();

@@ -19,7 +19,7 @@ var array = [];
   };
   firebase.initializeApp(config);
        var bigOne = document.getElementById('bigOne');
-        var dbref = firebase.auth().child('text');
+        var dbref = firebase.ref();
         dbref.on('value',snap => bigOne.innerText = snap.val());
 function init() {
   // Initialise the map.

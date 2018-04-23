@@ -17,6 +17,10 @@ var array = [];
     storageBucket: "newproject-a8358.appspot.com",
     messagingSenderId: "1004235886520"
   };
+var firebase = require('firebase/app');
+require('firebase/auth');
+require('firebase/database');
+
   firebase.initializeApp(config);
        var bigOne = document.getElementById('bigOne');
         var dbref = firebase.database.ref();

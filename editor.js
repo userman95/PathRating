@@ -11,8 +11,8 @@ var array = [];
 
 function storeValue(){
         var bigOne = document.getElementById('bigOne');
-        var dbref = firebase.database.ref();
-         dbref.child('text').set('some value');
+        var dbref = firebase.database().ref();
+         dbref.child('text').set('some FUCKIN VALUE');
 }
 function init() {
   // Initialise the map.

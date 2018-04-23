@@ -8,16 +8,7 @@ var selected;
 var PropertyValue="unknown";
 var totalSelected=0;
 var array = [];
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCts1Fasyz9di_G5jcMI8WBMFeJTMPYUu4",
-    authDomain: "newproject-a8358.firebaseapp.com",
-    databaseURL: "https://newproject-a8358.firebaseio.com",
-    projectId: "newproject-a8358",
-    storageBucket: "newproject-a8358.appspot.com",
-    messagingSenderId: "1004235886520"
-  };
-  firebase.initializeApp(config);
+
 function storeValue(){
         var bigOne = document.getElementById('bigOne');
         var dbref = firebase.database.ref();

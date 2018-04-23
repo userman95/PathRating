@@ -8,11 +8,7 @@ var selected;
 var PropertyValue="unknown";
 var totalSelected=0;
 var array = [];
-    // Access your firebase app
-    let app = firebase.app();
-    // Delete your app.
-    app.delete(app);
-window.alert(firebase.initializeApp(config));
+
 function storeValue(){
         var bigOne = document.getElementById('bigOne');
         var dbref = firebase.database.ref();

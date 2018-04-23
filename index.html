@@ -22,6 +22,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-CmjQQcI71kuW7qyZLCLTzOT1xl9jd20"></script>
     <script src="editor.js"></script>
   </head>
+  
   <body>
     <div id="map-holder"></div>
     <div id="left-column">
@@ -30,7 +31,12 @@
     <button onclick="geojsonOutput()" id="geo-toggle" class="btn btn-warning">GeoJson output</button>
     <button onclick="deletepaths()" id="deletepaths" >Delete All paths</button>
   	<a id="download-link" href="data:;base64," download="geojson.json"><button>Download GeoJson</button></a>
-    
+    <pre id="bigOne"><pre>
+      <script>
+        var bigOne = document.getElementById('bigOne');
+        var dbref = firebase.database.ref().child('text');
+        dbref.on('value',snap => bigOne.innerText = snap.val());
+      </script>
 
   </body>
 </html>

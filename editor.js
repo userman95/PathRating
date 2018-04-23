@@ -12,7 +12,7 @@ var array = [];
 function storeValue(){
         var bigOne = document.getElementById('bigOne');
         var dbref = firebase.database().ref();
-         dbref.set(geoJsonOutput.value);
+         dbref.child('GeoJson').set(geoJsonOutput.value);
 }
 function init() {
   // Initialise the map.

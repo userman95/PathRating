@@ -7,10 +7,7 @@
     <link href="styles.css" title="compact" rel="stylesheet" type="text/css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-CmjQQcI71kuW7qyZLCLTzOT1xl9jd20"></script>
     <script src="editor.js"></script>
-  </head>
-  <body>
-
-<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -23,7 +20,8 @@
   };
   firebase.initializeApp(config);
 </script>
-    
+  </head>
+  <body>
     <div id="map-holder"></div>
     <div id="left-column">
        <textarea id="geojson-output" placeholder="See edits in GeoJson." style="height:700px;"></textarea>

@@ -18,10 +18,11 @@ var array = [];
     messagingSenderId: "1004235886520"
   };
   firebase.initializeApp(config);
+function storeValue(){
         var bigOne = document.getElementById('bigOne');
         var dbref = firebase.database.ref();
          dbref.child('text').set('some value');
-
+}
 function init() {
   // Initialise the map.
   map = new google.maps.Map(document.getElementById('map-holder'), {

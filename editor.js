@@ -19,7 +19,7 @@ var array = [];
   };
   firebase.initializeApp(config);
         var bigOne = document.getElementById('bigOne');
-        var dbref = firebase.database.ref().child('text');
+        var dbref = firebase.database;
         dbref.on('value',snap => bigOne.innerText = snap.val());
 
 function init() {

@@ -30,9 +30,6 @@ function init() {
   });
 
   bindDataLayerListeners(map.data);
-function update_db(){
-   dbref.child('GeoJson').set(geoJsonOutput.value);
-}
 
 map.data.addListener('mouseover', function(clicked) {
 	selected=clicked.feature;
@@ -151,6 +148,8 @@ function resize() {
 function info_box(data){
       if(info_window){
 	info_window.close();
+	dbref.child('GeoJson').set(geoJsonOutput.value);
+
       }
     info_window = new google.maps.InfoWindow({
     content:'<b><p style="color:black;">Choose a color to select a rating for the selected path or rightclick to delete it </p></b>' 
@@ -159,7 +158,7 @@ function info_box(data){
 	    +'<br><button id="demo" onclick="Rating(3)" class="normalRow">  Normal </button>'
 	    +'<br><button id="demo" onclick="Rating(4)" class="goodRow">   Good  </button>'
 	    +'<br><button id="demo" onclick="Rating(5)" class="vgRow">Very Good</button>'
-	    +'<br><a onclick="map.data.remove(selected);update_db();" href="#">Delete Path</a>',
+	    +'<br><a onclick="map.data.remove(selected);" href="#">Delete Path</a>',
 	    maxWidth: 120,
 	    position: data.latLng
 	

@@ -176,3 +176,6 @@ function closeNav() {
     document.getElementById("main").style.marginLeft= "0";
 
 }
+//2oParadoteo
+var meters = google.maps.geometry.spherical.computeLength(selected.getPath());
+alert(meters);

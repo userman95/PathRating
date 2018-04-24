@@ -177,5 +177,5 @@ function closeNav() {
 
 }
 //2oParadoteo
-var meters = google.maps.geometry.spherical.computeLength(selected.getPath());
+var meters = computeLength(selected.getPath());
 alert(meters);

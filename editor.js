@@ -55,7 +55,7 @@ map.data.addListener('mouseout', function(clicked) {
   geoJsonOutput = document.getElementById('geojson-output');
   downloadLink = document.getElementById('download-link');
   //resize();
-  //google.maps.event.addDomListener(window, 'resize', resize);
+  google.maps.event.addDomListener(window, 'resize', resize);
 	
 //reading back the new color value
   map.data.setStyle(function(feature) {

@@ -34,7 +34,7 @@ function init() {
  function removeFeature(event){
          map.data.remove(event.feature);
 	dbref.child('GeoJson').set(geoJsonOutput.value);
-    });
+    }
 map.data.addListener('mouseover', function(clicked) {
 	selected=clicked.feature;
 	array[0]=selected;

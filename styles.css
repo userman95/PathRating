@@ -7,7 +7,7 @@ html, body {
 
 body {
   font-family: "Arial", "Helvetica", sans-serif;
-  color: #222;
+  color: #fff;
   font-size: 13px;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   overflow-y: auto;

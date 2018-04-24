@@ -9,7 +9,6 @@ var PropertyValue="unknown";
 var totalSelected=0;
 var array = [];
 
-var bigOne = document.getElementById('bigOne');
 var dbref = firebase.database().ref();
 dbref.child('GeoJson').set(geoJsonOutput.value);
 

@@ -157,7 +157,7 @@ function info_box(data){
 	    +'<br><button id="demo" onclick="Rating(3)" class="normalRow">  Normal </button>'
 	    +'<br><button id="demo" onclick="Rating(4)" class="goodRow">   Good  </button>'
 	    +'<br><button id="demo" onclick="Rating(5)" class="vgRow">Very Good</button>'
-	    +'<br><a onclick="map.data.remove(selected);dbref.child('GeoJson').set(geoJsonOutput.value);" href="#">Delete Path</a>',
+	    +'<br><a onclick="map.data.remove(selected);dbref.child("GeoJson").set(geoJsonOutput.value);" href="#">Delete Path</a>',
 	    maxWidth: 120,
 	    position: data.latLng
 	

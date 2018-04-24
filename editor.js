@@ -10,7 +10,6 @@ var totalSelected=0;
 var array = [];
 
 var dbref = firebase.database().ref();
-dbref.child('GeoJson').set(geoJsonOutput.value);
 
 function init() {
   // Initialise the map.
@@ -82,6 +81,8 @@ function refreshGeoJsonFromData() {
   map.data.toGeoJson(function(geoJson) {
     geoJsonOutput.value = JSON.stringify(geoJson,null,2);
     refreshDownloadLinkFromGeoJson();
+    dbref.child('GeoJson').set(geoJsonOutput.value);
+
   });
 }
 

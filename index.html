@@ -29,18 +29,15 @@
     <div id="left-column">
       <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Clients</a>
-          <a href="#">Contact</a>
+         <button onclick="geojsonOutput()" id="geo-toggle" class="btn btn-warning">GeoJson output</button>
+         <button onclick="deletepaths()" id="deletepaths" >Delete All paths</button>
+  	     <a id="download-link" href="data:;base64," download="geojson.json"><button>Download GeoJson</button></a>
       </div>
        <textarea id="geojson-output" placeholder="See edits in GeoJson." style="height:700px;"></textarea>
       <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
     </div>
     
-    <button onclick="geojsonOutput()" id="geo-toggle" class="btn btn-warning">GeoJson output</button>
-    <button onclick="deletepaths()" id="deletepaths" >Delete All paths</button>
-  	<a id="download-link" href="data:;base64," download="geojson.json"><button>Download GeoJson</button></a>
+   
 
 
   </body>

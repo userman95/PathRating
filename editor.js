@@ -54,7 +54,7 @@ map.data.addListener('mouseout', function(clicked) {
   var mapContainer = document.getElementById('map-holder');
   geoJsonOutput = document.getElementById('geojson-output');
   downloadLink = document.getElementById('download-link');
-  //resize();
+  resize();
   google.maps.event.addDomListener(window, 'resize', resize);
 	
 //reading back the new color value
@@ -144,11 +144,11 @@ function Rating(rate){
       }
 }
 
-/*function resize() {
+function resize() {
   var geoJsonOutputRect = geoJsonOutput.getBoundingClientRect();
   var stiliRect = left_column.getBoundingClientRect();
   geoJsonOutput.style.height = stiliRect.bottom - geoJsonOutputRect.top - 8 + "px";
-}*/
+}
 
 function info_box(data){
       if(info_window){

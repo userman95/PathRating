@@ -33,13 +33,13 @@ function init() {
 
 
 map.data.addListener('mouseover', function(clicked) {
-	selected=clicked;
+	selected=clicked.feature;
 	array[0]=selected;
         map.data.overrideStyle(array[0], {strokeWeight: 8});
 	dbref.child('GeoJson').set(geoJsonOutput.value);
     });
 function removeFeature(){
-         map.data.remove(selected.feature);
+         map.data.remove(selected);
 	dbref.child('GeoJson').set(geoJsonOutput.value);
     }
 map.data.addListener('mouseout', function(clicked) {

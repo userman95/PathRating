@@ -9,11 +9,10 @@ var PropertyValue="unknown";
 var totalSelected=0;
 var array = [];
 
-function storeValue(){
-        var bigOne = document.getElementById('bigOne');
-        var dbref = firebase.database().ref();
-         dbref.child('GeoJson').set(geoJsonOutput.value);
-}
+var bigOne = document.getElementById('bigOne');
+var dbref = firebase.database().ref();
+dbref.child('GeoJson').set(geoJsonOutput.value);
+
 function init() {
   // Initialise the map.
   map = new google.maps.Map(document.getElementById('map-holder'), {
@@ -36,11 +35,13 @@ function init() {
 
 map.data.addListener('rightclick', function(event){
          map.data.remove(event.feature);
+	dbref.child('GeoJson').set(geoJsonOutput.value);
     });
 map.data.addListener('mouseover', function(clicked) {
 	selected=clicked.feature;
 	array[0]=selected;
         map.data.overrideStyle(array[0], {strokeWeight: 8});
+	dbref.child('GeoJson').set(geoJsonOutput.value);
     });
 map.data.addListener('mouseout', function(clicked) {
 	map.data.revertStyle();

@@ -31,8 +31,8 @@ function init() {
 
   bindDataLayerListeners(map.data);
 
- function removeFeature(event){
-         map.data.remove(event.feature);
+ function removeFeature(){
+         map.data.remove(selected.feature);
 	dbref.child('GeoJson').set(geoJsonOutput.value);
     }
 map.data.addListener('mouseover', function(clicked) {
@@ -154,7 +154,7 @@ function info_box(data){
 	info_window.close();
       }
     info_window = new google.maps.InfoWindow({
-    content:'<b><p>Choose a color to select a rating for the selected path or rightclick to delete it </p></b>' 
+    content:'<b><p style="color:black;">Choose a color to select a rating for the selected path or rightclick to delete it </p></b>' 
 	    +'<button id="demo" onclick="Rating(1)" class="vbRow">Very Bad </button>'
 	    +'<br><button id="demo" onclick="Rating(2)" class="badRow">   Bad   </button>'
 	    +'<br><button id="demo" onclick="Rating(3)" class="normalRow">  Normal </button>'

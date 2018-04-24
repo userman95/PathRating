@@ -167,3 +167,10 @@ function info_box(data){
      });
    info_window.open(map);
 }
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}

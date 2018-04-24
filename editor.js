@@ -31,7 +31,7 @@ function init() {
 
   bindDataLayerListeners(map.data);
 
-map.data.addListener('rightclick', function(event){
+ function removeFeature(event){
          map.data.remove(event.feature);
 	dbref.child('GeoJson').set(geoJsonOutput.value);
     });
@@ -45,7 +45,6 @@ map.data.addListener('mouseout', function(clicked) {
 	map.data.revertStyle();
     });
   map.data.addListener("click",function(event){
-	 // Rating(rate);
          info_box(event);
     });
 	
@@ -160,7 +159,8 @@ function info_box(data){
 	    +'<br><button id="demo" onclick="Rating(2)" class="badRow">   Bad   </button>'
 	    +'<br><button id="demo" onclick="Rating(3)" class="normalRow">  Normal </button>'
 	    +'<br><button id="demo" onclick="Rating(4)" class="goodRow">   Good  </button>'
-	    +'<br><button id="demo" onclick="Rating(5)" class="vgRow">Very Good</button>',
+	    +'<br><button id="demo" onclick="Rating(5)" class="vgRow">Very Good</button>'
+	    +'<br><a onclick="removeFeature(event)" href="#">Delete Path</a>',
 	    maxWidth: 100,
 	    position: data.latLng
 	

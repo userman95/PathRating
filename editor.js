@@ -31,16 +31,17 @@ function init() {
 
   bindDataLayerListeners(map.data);
 
- function removeFeature(){
-         map.data.remove(selected.feature);
-	dbref.child('GeoJson').set(geoJsonOutput.value);
-    }
+
 map.data.addListener('mouseover', function(clicked) {
 	selected=clicked.feature;
 	array[0]=selected;
         map.data.overrideStyle(array[0], {strokeWeight: 8});
 	dbref.child('GeoJson').set(geoJsonOutput.value);
     });
+function removeFeature(){
+         map.data.remove(selected.feature);
+	dbref.child('GeoJson').set(geoJsonOutput.value);
+    }
 map.data.addListener('mouseout', function(clicked) {
 	map.data.revertStyle();
     });

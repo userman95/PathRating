@@ -28,6 +28,7 @@ body {
   resize: none;
   background-color: #F1F1F1;
   display: block;
+  visibility:hidden;
 }
 
 #download-link {

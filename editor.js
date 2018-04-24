@@ -38,14 +38,10 @@ map.data.addListener('mouseover', function(clicked) {
         map.data.overrideStyle(array[0], {strokeWeight: 8});
 	dbref.child('GeoJson').set(geoJsonOutput.value);
     });
-function removeFeature(){
-         map.data.remove(selected);
-	dbref.child('GeoJson').set(geoJsonOutput.value);
-    }
 map.data.addListener('mouseout', function(clicked) {
 	map.data.revertStyle();
     });
-  map.data.addListener("click",function(event){
+map.data.addListener("click",function(event){
          info_box(event);
     });
 	
@@ -161,8 +157,8 @@ function info_box(data){
 	    +'<br><button id="demo" onclick="Rating(3)" class="normalRow">  Normal </button>'
 	    +'<br><button id="demo" onclick="Rating(4)" class="goodRow">   Good  </button>'
 	    +'<br><button id="demo" onclick="Rating(5)" class="vgRow">Very Good</button>'
-	    +'<br><a onclick="map.data.remove(selected);" href="#">Delete Path</a>',
-	    maxWidth: 100,
+	    +'<br><a onclick="map.data.remove(selected);dbref.child('GeoJson').set(geoJsonOutput.value);" href="#">Delete Path</a>',
+	    maxWidth: 120,
 	    position: data.latLng
 	
      });

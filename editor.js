@@ -33,7 +33,7 @@ function init() {
 
 
 map.data.addListener('mouseover', function(clicked) {
-	selected=clicked.feature;
+	selected=clicked;
 	array[0]=selected;
         map.data.overrideStyle(array[0], {strokeWeight: 8});
 	dbref.child('GeoJson').set(geoJsonOutput.value);

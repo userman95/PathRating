@@ -41,6 +41,8 @@ map.data.addListener('mouseout', function(clicked) {
 	map.data.revertStyle();
     });
 map.data.addListener("click",function(event){
+	 var meters = computeLength(selected);
+	 alert(meters);
          info_box(event);
     });
 	
@@ -177,5 +179,4 @@ function closeNav() {
 
 }
 //2oParadoteo
-var meters = computeLength(selected.getPath());
-alert(meters);
+

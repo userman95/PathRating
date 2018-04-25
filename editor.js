@@ -41,7 +41,7 @@ map.data.addListener('mouseout', function(clicked) {
 	map.data.revertStyle();
     });
 map.data.addListener("click",function(event){
-	 var meters = computeLength(selected);
+	 var meters = google.maps.geometry.spherical.computeLength(selected);
 	 alert(meters);
          info_box(event);
     });

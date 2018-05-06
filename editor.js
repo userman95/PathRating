@@ -49,6 +49,7 @@ function init() {
 			distance += meters;
 			distance=Math.ceil(distance);
 		} 
+
 	    });
 
 	map.data.addListener('mouseout', function(clicked) {
@@ -56,10 +57,8 @@ function init() {
 	    });
 	map.data.addListener("click",function(event){
 		 info_box(event); //info box pou periexei thn apostash,ta ratings kai thn epilogh delete path
-
 	    });
 	map.data.addListener('mousemove',function(event){
-	         controlPaths(); //diagrafh monopatiou pou einai eksw apo ton kuklo 100 metrwn ths trexousas topothesias tou xristi
 	});
 	  // Retrieve HTML elements.
 	  left_column = document.getElementById('left-column');
@@ -119,7 +118,7 @@ function init() {
 	      clickable : false,
 	      map: map,
 	      center:  pos,
-	      radius:  50
+	      radius:  100
 	    });
 	  }, function() {
 	    handleLocationError(true, new_infoWindow, map.getCenter());
@@ -153,14 +152,15 @@ function refreshGeoJsonFromData() {
 function controlPaths(){
 	 	 map.data.forEach(function(feature){
 		 coord = feature.getGeometry().getArray();
-		   for(var i=0;i<coord.length;i++){//gia kathe coordinate enos  feature an i apostasi einai >=50 (100m diladi) kai exei uknown property, diegrapse to.
-			   if((google.maps.geometry.spherical.computeDistanceBetween(coord[i],to) >= 50) && feature.getProperty("Rating")===PropertyValue)
+		   for(var i=0;i<coord.length;i++){//gia kathe coordinate enos  feature an i apostasi einai >=100 (100m diladi) kai exei uknown property, diegrapse to.
+			   if((google.maps.geometry.spherical.computeDistanceBetween(coord[i],to) > 100) && feature.getProperty("Rating")===PropertyValue)
 			   {
+				      // alert('Ops!Outside of your circle!!!');
+
 					map.data.remove(feature);
 			   }			
 	 	    }//end of for
 		 });//end of forEach
-		
 }
 function compute_total_distance(){ // oles oi apostaseis mazi apothikeuontai sto all_coords_together kai meta sthn global metavliti total gia na xrhsimopoieithei allou
 	var met =0;
@@ -230,7 +230,7 @@ function Rating(rate){
 	selected.setProperty("Colour",col);
 	refreshGeoJsonFromData();
 	compute_total_distance();
-
+	
 	 if(info_window){
 	info_window.close();
       }
@@ -243,6 +243,8 @@ function resize() {
 }
 //epeksergasia tou info window 
 function info_box(data){
+	 controlPaths(); //diagrafh monopatiou pou einai eksw apo ton kuklo 100 metrwn ths trexousas topothesias tou xristi
+
       if(info_window){
 	info_window.close();
 	dbref.child('GeoJson').set(geoJsonOutput.value);

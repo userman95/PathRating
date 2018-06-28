@@ -24,7 +24,7 @@ function init() {
 	    fullscreenControl: false,
 	    mapTypeId: 'satellite'
 	  });
-	  map.data.loadGeoJson('2013139_review.geojson')
+	  map.data.loadGeoJson('data/2013139_review.geojson')
 	 map.data.setControls(['Point','LineString','Polygon']);
 
 	  map.data.setStyle({

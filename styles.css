@@ -1,153 +1,106 @@
-html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+
+*{
+  box-sizing: border-box;
 }
 
-body {
-  font-family: "Arial", "Helvetica", sans-serif;
-  color: #fff;
-  font-size: 13px;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  overflow-y: auto;
+body{
+  background:#92bde7;
+  color:#485e74;
+  line-height:1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding:1em;
+}
+.container{
+  max-width:1170px;
+  margin-left:auto;
+  margin-right:auto;
+  padding:1em;
 }
 
-/* Map styles. */ 
-#map-holder {
-  float:right;
-  height: 100%;
-  width: 85%;
-}
-#geojson-output {
-  width: 100%;
-  -webkit-box-sizing: border-box; /* <=iOS4, <= Android  2.3 */
-  -moz-box-sizing: border-box; /* FF1+ */
-  box-sizing: border-box; /* Chrome, IE8, Opera, Safari 5.1*/
-  border: none;
-  resize: none;
-  background-color: #F1F1F1;
-  display: block;
+ul{
+  list-style: none;
+  padding:0;
 }
 
-#download-link {
-  position: absolute;
-  top:100px;
-  z-index:100;
+.brand{
+  text-align: center;
 }
 
-/*style the 'Geojson output' button*/
-#geo-toggle{          
-    position: absolute;
-    top: 69px;
-    z-index:100; 
+.brand span{
+  color:#fff;
 }
 
-/*delete paths button style*/
-#deletepaths{
-  position: absolute;
-   top: 39px;
-   z-index: 100;
-}
-/*dropdown menu*/
-.vbRow {
-    background-color: red;
-    width: 90px;
-    color: black;
-    text-align: center;
-    font-size: 15px;
-    border-style: inset;
-}
-.badRow {
-    background-color: orange;
-    width: 90px;
-    color: black;
-    text-align: center;  
-    font-size: 15px;
-    border-style: inset;
-}
-.normalRow {
-    background-color: #e86b97;
-    width: 90px;
-    color: black;
-    text-align: center;
-    font-size: 15px;
-    border-style: inset;
-}
-.goodRow {
-    background-color: blue;
-    width: 90px;
-    color: black;
-    text-align: center;
-    font-size: 15px;
-    border-style: inset;
-}
-.vgRow {
-    background-color:green;
-    width: 90px;
-    color: black;
-    text-align: center;
-    font-size: 15px;
-    border-style: inset;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+.wrapper{
+  box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-.show {display:block;}
-
-#left-column{
-  float:left;
-  height:100%;
-  width:15%;
-  background:black;
-}
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 30px;
+.wrapper > *{
+  padding: 1em;
 }
 
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
+.company-info{
+  background:#c9e6ff;
 }
 
-.sidenav a:hover {
-    color: #f1f1f1;
+.company-info h3, .company-info ul{
+  text-align: center;
+  margin:0 0 1rem 0;
 }
 
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+.contact{
+  background:#f9feff;
 }
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
+
+/* FORM STYLES */
+.contact form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:20px;
+}
+
+.contact form label{
+  display:block;
+}
+
+.contact form p{
+  margin:0;
+}
+
+.contact form .full{
+  grid-column: 1 / 3;
+}
+
+.contact form button, .contact form input, .contact form textarea{
+  width:100%;
+  padding:1em;
+  border:1px solid #c9e6ff;
+}
+
+.contact form button{
+  background:#c9e6ff;
+  border:0;
+  text-transform: uppercase;
+}
+
+.contact form button:hover,.contact form button:focus{
+  background:#92bde7;
+  color:#fff;
+  outline:0;
+  transition: background-color 2s ease-out;
+}
+
+/* LARGE SCREENS */
+@media(min-width:700px){
+  .wrapper{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .wrapper > *{
+    padding:2em;
+  }
+
+  .company-info h3, .company-info ul, .brand{
+    text-align: left;
+  }
 }

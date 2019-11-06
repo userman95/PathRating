@@ -3,14 +3,75 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-site-verification" content="YeUxmewTMorKKCH2NJlgiQBrCx5SFrzzY4oBI1fzhh0" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+    <link rel="stylesheet" href="styles.css">
     <title>Corfu Map Editor</title>
-    <link href="styles.css" title="compact" rel="stylesheet" type="text/css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbYXkPpfGgj-9bn_7EXlTpG1d-F0Ew-eQ"></script>
+    <link href="styles1.css" title="compact" rel="stylesheet" type="text/css">
+    
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script>
+      // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAs9wLyHp1raTZHxavxUJ_HGpGLL0wnerQ",
+    authDomain: "pathrating.firebaseapp.com",
+    databaseURL: "https://pathrating.firebaseio.com",
+    projectId: "pathrating",
+    storageBucket: "pathrating.appspot.com",
+    messagingSenderId: "703693952201"
+  };
+  firebase.initializeApp(config);
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAs9wLyHp1raTZHxavxUJ_HGpGLL0wnerQ&libraries=geometry"></script>
     <script src="editor.js"></script>
   </head>
+  
   <body>
-    <textarea id="geojson-output" placeholder="See edits in GeoJson."></textarea>
-	<div id="map-holder"></div>
-	<a id="download-link" href="data:;base64," download="geojson.json"><button>Download GeoJson</button></a>
+    <div id="map-holder"></div>
+  <div id="left-column">
+      <div id="mySidenav" class="sidenav" style="width=50%;">
+        <table id ="leaderboard" style="display:none;padding-top:200px;"></table>
+         <div id="login-page" class="container" style="display:none;padding-top:200px">
+          <div class="wrapper animated bounceInLeft">
+            <div class="company-info">
+              <h3>Login Page</h3>
+              <a id="BackToMap" onclick="Hide_Show();" href="#" style="color:black";>Hide</a>
+            </div>
+            <div class="contact">
+              <h3 style="color:black";>Send Info to database</h3>
+              <form id="contactform">
+                <p>
+                  <label style="color:black";>Name</label>
+                  <input type="text" name="name" id="name">
+                </p>
+                <p>
+                  <label style="color:black";>Email Address</label>
+                  <input type="email" name="email" id="email">
+                </p>
+                 <p>
+                  <label style="color:black";>Total Distance Of Paths</label>
+                  <p id="valueofdistance" style="border-style: inset; color:black;"></p>
+                </p>
+                <p class="full">
+                  <button type="submit">Submit</button>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+         <a onclick="geojsonOutput()" id="geo-toggle" href="#">GeoJson output</a>
+         <a onclick="deletepaths()" id="deletepaths" href="#">Delete All paths</a>
+  	     <a id="download-link" href="data:;base64," download="geojson.json" href="#">Download GeoJson</a>
+        <a id="index" onclick="Hide_Show();" href="#">Login Page</a>
+        <a id = "tablo" onclick="Hide_Show_Table();" href="#">Open/Close LeaderBoard</a>
+      </div>
+      <div id="main">
+      <span style="font-size:30px;cursor:pointer;background:black;" onclick="openNav()">&#9776;</span>
+      </div>
+      <textarea id="geojson-output" placeholder="See edits in GeoJson." style="height:700px;display:none;"></textarea>    
+    </div>
   </body>
 </html>

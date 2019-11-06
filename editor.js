@@ -152,7 +152,7 @@ function refreshGeoJsonFromData() {
 function controlPaths(){
 	 	 map.data.forEach(function(feature){
 		 coord = feature.getGeometry().getArray();
-			 console.log(to,google.maps.geometry.spherical.computeDistanceBetween(50,to));
+			 console.log(coord);
 		   for(var i=0;i<coord.length;i++){//gia kathe coordinate enos  feature an i apostasi einai >=100 (100m diladi) kai exei uknown property, diegrapse to.
 			   if((google.maps.geometry.spherical.computeDistanceBetween(coord[i],to) > 100) && feature.getProperty("Rating")===PropertyValue)
 			   {

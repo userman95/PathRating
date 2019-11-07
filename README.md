@@ -8,7 +8,7 @@ To open the app just open the index.html file.
 
 ## Deployment
 
-You can add it in a live version through github pages or heroku 
+It was deployed with Github-pages
 
 ## Built With
 

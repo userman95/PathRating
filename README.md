@@ -20,3 +20,8 @@ It was deployed with Github-pages
 ## Authors
 
 * **Orestis Kaplanis** 
+
+## Screenshot
+
+![scr1](https://github.com/userman95/PathRating/blob/master/scr1.png)
+![scr2](https://github.com/userman95/PathRating/blob/master/scr2.png)

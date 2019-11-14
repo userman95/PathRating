@@ -11,6 +11,8 @@ The user creates a path in the circle in his map and rates any path he creates. 
 Then, he submits the total data into the database and his results come into a leaderboard that shows the overall rating in meters.
 In the leaderboard there can be seen the user with the most rated paths together with the metered results.
 
+All these results can come in handy for all users who are not familiar with a specific place-region. A future development can have the database to gather collections of ratings and guide the best path for the user to use through these. At the end of the day, users build their own network of paths to help all other users and scale the app by themselves! 
+
 ## Screenshot
 
 ![scr1](https://github.com/userman95/PathRating/blob/master/scr1.png)
